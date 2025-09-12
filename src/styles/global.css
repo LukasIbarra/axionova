@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* Estilos globales optimizados */
+:root {
+  --ff-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ff-heading: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  font-family: var(--ff-sans);
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+body {
+  font-family: var(--ff-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimizaciones de rendimiento */
+* {
+  box-sizing: border-box;
+}
+
+/* Animaciones optimizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Clases de utilidad para animaciones */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+/* Mejoras visuales para profundidad */
+.shadow-premium {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-premium-hover:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Gradientes premium */
+.gradient-premium {
+  background: linear-gradient(135deg, #0B0B0D 0%, #1a1a1a 50%, #0B0B0D 100%);
+}
+
+.gradient-orange {
+  background: linear-gradient(135deg, #FF6A00 0%, #ff8533 100%);
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, #2BB673 0%, #3dd68c 100%);
+}
+
+/* Transiciones suaves */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estilos para botones premium */
+.btn-premium {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-premium:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-premium-orange {
+  background-color: #FF6A00; /* Replace with your axionova-orange color code */
+  color: #fff;
+}
+
+.btn-premium-orange:hover {
+  background-color: #ff8533; /* Replace with your axionova-orange/90 color code */
+}
+
+.btn-premium-white {
+  background-color: #fff;
+  color: #18181b; /* Replace with your axionova-dark color code */
+}
+.btn-premium-white:hover {
+  background-color: #f3f4f6; /* Replace with your gray-100 color code */
+}
+
+/* Mejoras para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimizaciones para móviles */
+@media (max-width: 768px) {
+  .mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

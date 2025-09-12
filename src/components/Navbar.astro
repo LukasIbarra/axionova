@@ -1,0 +1,47 @@
+<nav class="fixed w-full z-50 bg-axionova-dark/90 backdrop-blur-md shadow-lg">
+  <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-16">
+    <!-- Logo -->
+    <a href="/" class="flex items-center space-x-2">
+      <img src="/img/logo.png" alt="Axionova Logo" class="h-10 w-10 rounded-full" />
+      <span class="font-bold text-xl text-white">Axionova</span>
+    </a>
+
+    <!-- Links Desktop -->
+    <div class="hidden md:flex space-x-8 text-gray-300 font-medium">
+      <a href="#servicios" class="hover:text-axionova-orange transition">Servicios</a>
+      <a href="#nosotros" class="hover:text-axionova-orange transition">Nosotros</a>
+      <a href="#contacto" class="hover:text-axionova-orange transition">Contacto</a>
+    </div>
+
+    <!-- Botón CTA Desktop -->
+    <a href="#contacto" class="hidden md:inline-block px-4 py-2 rounded-full bg-axionova-orange text-white font-semibold hover:scale-105 transition">
+      Contáctanos
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-axionova-dark/95 backdrop-blur-md shadow-lg">
+    <div class="px-6 py-4 space-y-4">
+      <a href="#servicios" class="block text-gray-300 hover:text-axionova-orange transition">Servicios</a>
+      <a href="#nosotros" class="block text-gray-300 hover:text-axionova-orange transition">Nosotros</a>
+      <a href="#contacto" class="block text-gray-300 hover:text-axionova-orange transition">Contacto</a>
+      <a href="#contacto" class="block px-4 py-2 rounded-full bg-axionova-orange text-white font-semibold text-center">Contáctanos</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>

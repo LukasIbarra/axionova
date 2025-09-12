@@ -1,0 +1,25 @@
+---
+import "../styles/global.css";
+const { 
+  title = "Axionova - Futuro diseñado con confianza y precisión", 
+  description = "Consultoría en minería especializada en optimización de procesos, mantenimiento predictivo y transformación digital para la excelencia operacional." 
+} = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="consultoría minería, optimización procesos, mantenimiento predictivo, transformación digital, Six Sigma, Lean, Coquimbo" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.0/css/all.css">
+
+  </head>
+  <body class="bg-axionova-dark text-gray-100 antialiased">
+    <slot />
+  </body>
+</html>
