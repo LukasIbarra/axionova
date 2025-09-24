@@ -1,0 +1,685 @@
+---
+interface FormField {
+  name: string;
+  placeholder: string;
+  type: string;
+}
+
+interface Stat {
+  icon: string;
+  value: string;
+  label: string;
+  color: string;
+}
+
+interface Slide {
+  id: number;
+  type: "impact" | "form" | "stats";
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  highlights?: string[];
+  formFields?: FormField[];
+  stats?: Stat[];
+}
+
+const heroSlides: Slide[] = [
+  {
+    id: 1,
+    type: "impact",
+    title: "El Futuro de la",
+    subtitle: "Minería es Hoy",
+    description: "Revolucionamos la industria con tecnología de vanguardia que maximiza la eficiencia, garantiza la seguridad y protege el medio ambiente.",
+    image: "/servi4.jpg",
+    highlights: [
+      "Tecnología IA Avanzada",
+      "Seguridad Certificada ISO",
+      "Sostenibilidad Garantizada"
+    ]
+  },
+  {
+    id: 2,
+    type: "form",
+    title: "¿Listo para",
+    subtitle: "Transformar tu Operación?",
+    description: "Obtén una consultoría gratuita y descubre cómo nuestras soluciones pueden revolucionar tu empresa minera.",
+    image: "/conte6.jpg",
+    formFields: [
+      { name: "empresa", placeholder: "Nombre de tu empresa", type: "text" },
+      { name: "email", placeholder: "Email corporativo", type: "email" },
+      { name: "telefono", placeholder: "Teléfono", type: "tel" }
+    ]
+  },
+  {
+    id: 3,
+    type: "stats",
+    title: "Resultados que",
+    subtitle: "Hablan por Sí Solos",
+    description: "Más de 15 años liderando la transformación digital de la minería con resultados comprobados y reconocimiento mundial.",
+    image: "/conte4.jpg",
+    stats: [
+      { icon: "trending-up", value: "300%", label: "Aumento Eficiencia", color: "from-orange-500 to-orange-600" },
+      { icon: "shield", value: "99.9%", label: "Índice Seguridad", color: "from-emerald-500 to-emerald-600" },
+      { icon: "users", value: "50+", label: "Proyectos Exitosos", color: "from-blue-500 to-blue-600" },
+      { icon: "globe", value: "12", label: "Países Activos", color: "from-purple-500 to-purple-600" }
+    ]
+  }
+];
+---
+
+<section id="inicio" class="relative min-h-screen overflow-hidden bg-black">
+  <!-- Background Images -->
+  {heroSlides.map((slide, index) => (
+    <div
+      class={`slide-background absolute inset-0 transition-all duration-1500 ease-in-out ${
+        index === 0 ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+      }`}
+      style={`background-image: url('${slide.image}'); background-size: cover; background-position: center;`}
+      data-slide={index}
+    >
+      <div class="absolute inset-0 bg-black/70"></div>
+    </div>
+  ))}
+
+  <!-- Animated Particles -->
+  <div class="particles absolute inset-0 overflow-hidden pointer-events-none">
+    {Array.from({ length: 20 }, (_, i) => (
+      <div
+        class={`particle absolute w-1 h-1 bg-emerald-400 rounded-full opacity-30 animate-float-${i % 3}`}
+        style={`left: ${5 + (i * 4.5) % 90}%; top: ${10 + (i * 3.5) % 80}%; animation-delay: ${i * 0.3}s;`}
+      ></div>
+    ))}
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-20 h-full flex items-center justify-center">
+    <div class="container mx-auto px-6 py-20 flex flex-col justify-start h-full">
+      
+      <!-- Impact Slide (Slide 1) -->
+      <div class={`slide-content impact-slide w-full max-w-6xl mx-auto flex flex-col items-start text-left transition-all duration-800 ${
+        heroSlides[0].type === 'impact' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'
+      }`}>
+      <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-2 mb-6 animate-fade-in" style="position: absolute; right: 10px; top: 10px; z-index: 40;">
+        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+        </svg>
+        <span class="text-emerald-400 font-medium">Líder en Innovación Minera 2024</span>
+      </div>
+
+        <h1 class="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight">
+          <span class="block animate-slide-in-left">El Futuro de la</span>
+          <span class="block bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent animate-slide-in-right">Minería es Hoy</span>
+        </h1>
+
+        <p class="text-xl text-gray-300 mb-8 max-w-3xl animate-fade-in-delay">
+          Revolucionamos la industria con tecnología de vanguardia que maximiza la eficiencia, garantiza la seguridad y protege el medio ambiente.
+        </p>
+
+        <div class="space-y-3 mb-10 animate-fade-in-delay-2">
+          <div class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span class="text-gray-300">Tecnología IA Avanzada</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span class="text-gray-300">Seguridad Certificada ISO</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span class="text-gray-300">Sostenibilidad Garantizada</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-3">
+          <button class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-0 px-8 py-4 group shadow-lg hover:shadow-orange-500/25 transition-all duration-300 rounded-xl font-semibold">
+            Explorar Soluciones
+            <svg class="w-5 h-5 ml-2 inline group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </button>
+
+          <button class="border border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-400 px-8 py-4 group transition-all duration-300 rounded-xl font-semibold">
+            <svg class="w-5 h-5 mr-2 inline group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-6.518-3.75v7.5l6.518-3.75z"></path>
+            </svg>
+            Ver Demo Interactiva
+          </button>
+        </div>
+      </div>
+
+      <!-- Form Slide (Slide 2) -->
+      <div class={`slide-content form-slide w-full max-w-6xl mx-auto transition-all duration-800 ${
+        heroSlides[1].type === 'form' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'
+      }`}>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="inline-flex items-center space-x-2 bg-orange-500/10 border border-orange-500/20 rounded-full px-4 py-2 mb-6 animate-fade-in" style="position: absolute; right: 10px; top: 10px; z-index: 40;">
+              <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-orange-400 font-medium">Consultoría Gratuita</span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              <span class="block animate-slide-in-left">¿Listo para</span>
+              <span class="block bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent animate-slide-in-right">Transformar tu Operación?</span>
+            </h1>
+
+            <p class="text-lg text-gray-300 mb-6 animate-fade-in-delay">
+              Obtén una consultoría gratuita y descubre cómo nuestras soluciones pueden revolucionar tu empresa minera.
+            </p>
+
+            <div class="space-y-2 animate-fade-in-delay-2">
+              <div class="flex items-center space-x-2 text-emerald-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="text-sm">Respuesta en 24 horas</span>
+              </div>
+              <div class="flex items-center space-x-2 text-emerald-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="text-sm">Análisis personalizado</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-black/40 backdrop-blur-xl border border-gray-800/50 rounded-3xl p-8 animate-fade-in-delay">
+            <h3 class="text-2xl font-bold text-white mb-6">Solicita tu Consultoría</h3>
+
+            <form class="space-y-4" id="consultation-form">
+              <input
+                type="text"
+                placeholder="Nombre de tu empresa"
+                name="empresa"
+                class="w-full px-5 py-3 bg-gray-900/50 border border-gray-700 text-white placeholder-gray-400 focus:border-orange-500 rounded-xl transition-colors"
+              />
+              <input
+                type="email"
+                placeholder="Email corporativo"
+                name="email"
+                class="w-full px-5 py-3 bg-gray-900/50 border border-gray-700 text-white placeholder-gray-400 focus:border-orange-500 rounded-xl transition-colors"
+              />
+              <input
+                type="tel"
+                placeholder="Teléfono"
+                name="telefono"
+                class="w-full px-5 py-3 bg-gray-900/50 border border-gray-700 text-white placeholder-gray-400 focus:border-orange-500 rounded-xl transition-colors"
+              />
+
+              <button
+                type="submit"
+                class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-0 rounded-xl py-4 font-semibold group transition-all duration-300"
+              >
+                Obtener Consultoría
+                <svg class="w-4 h-4 ml-2 inline group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Slide (Slide 3) -->
+      <div class={`slide-content stats-slide w-full max-w-6xl mx-auto flex flex-col items-center text-center transition-all duration-800 ${
+        heroSlides[2].type === 'stats' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'
+      }`}>
+        <div class="inline-flex items-center space-x-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-4 py-2 mb-6 animate-fade-in" style="position: absolute; right: 10px; top: 10px; z-index: 40;">
+          <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span class="text-purple-400 font-medium">Líderes de la Industria</span>
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <span class="block animate-slide-in-up">Resultados que</span>
+          <span class="block bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent animate-slide-in-up-delay">Hablan por Sí Solos</span>
+        </h1>
+
+        <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto animate-fade-in-delay">
+          Más de 15 años liderando la transformación digital de la minería con resultados comprobados y reconocimiento mundial.
+        </p>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-10 animate-fade-in-delay-2">
+          <div class="bg-black/40 backdrop-blur-xl border border-gray-800/50 rounded-2xl p-6">
+            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+              </svg>
+            </div>
+            <div class="text-3xl font-bold text-white mb-2">300%</div>
+            <div class="text-gray-400 text-sm">Aumento Eficiencia</div>
+          </div>
+
+          <div class="bg-black/40 backdrop-blur-xl border border-gray-800/50 rounded-2xl p-6">
+            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center text-white">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div class="text-3xl font-bold text-white mb-2">99.9%</div>
+            <div class="text-gray-400 text-sm">Índice Seguridad</div>
+          </div>
+
+          <div class="bg-black/40 backdrop-blur-xl border border-gray-800/50 rounded-2xl p-6">
+            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+              </svg>
+            </div>
+            <div class="text-3xl font-bold text-white mb-2">50+</div>
+            <div class="text-gray-400 text-sm">Proyectos Exitosos</div>
+          </div>
+
+          <div class="bg-black/40 backdrop-blur-xl border border-gray-800/50 rounded-2xl p-6">
+            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path>
+              </svg>
+            </div>
+            <div class="text-3xl font-bold text-white mb-2">12</div>
+            <div class="text-gray-400 text-sm">Países Activos</div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-3">
+          <button class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-0 px-8 py-4 group transition-all duration-300 rounded-xl font-semibold">
+            Ver Casos de Éxito
+            <svg class="w-5 h-5 ml-2 inline group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </button>
+
+          <button class="border border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-400 px-8 py-4 group transition-all duration-300 rounded-xl font-semibold">
+            Descargar Reporte
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <button
+    id="prev-btn"
+    class="absolute left-8 top-1/2 transform -translate-y-1/2 z-30 w-14 h-14 bg-black/50 backdrop-blur-sm border border-gray-700 rounded-full flex items-center justify-center text-white hover:bg-black/70 hover:border-emerald-500 transition-all duration-300 group"
+  >
+    <svg class="w-6 h-6 group-hover:text-emerald-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+    </svg>
+  </button>
+
+  <button
+    id="next-btn"
+    class="absolute right-8 top-1/2 transform -translate-y-1/2 z-30 w-14 h-14 bg-black/50 backdrop-blur-sm border border-gray-700 rounded-full flex items-center justify-center text-white hover:bg-black/70 hover:border-emerald-500 transition-all duration-300 group"
+  >
+    <svg class="w-6 h-6 group-hover:text-emerald-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+    </svg>
+  </button>
+
+  <!-- Slide Indicators -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex space-x-3">
+    {heroSlides.map((_, index) => (
+      <button
+        class={`indicator w-3 h-8 rounded-full transition-all duration-300 ${
+          index === 0 ? "bg-emerald-400 scale-125" : "bg-white/30 hover:bg-white/50"
+        }`}
+        data-slide={index}
+      ></button>
+    ))}
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="absolute bottom-0 left-0 w-full h-1 bg-gray-800">
+    <div id="progress-bar" class="h-full bg-gradient-to-r from-orange-500 to-emerald-500 transition-all duration-8000 ease-linear"></div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-20 animate-fade-in-delay-4">
+    <div class="w-6 h-10 border-2 border-emerald-400 rounded-full flex justify-center animate-bounce">
+      <div class="w-1 h-3 bg-emerald-400 rounded-full mt-2"></div>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ heroSlides }}>
+  // Variables globales
+  let currentSlideIndex = 0;
+  let isAutoPlaying = true;
+  let autoPlayInterval = null;
+  let progressBar = null;
+
+  function updateSlide() {
+    // Actualizar backgrounds
+    const backgrounds = document.querySelectorAll('.slide-background');
+    backgrounds.forEach((bg, index) => {
+      if (bg instanceof HTMLElement) {
+        bg.style.opacity = index === currentSlideIndex ? '1' : '0';
+        bg.style.transform = index === currentSlideIndex ? 'scale(1)' : 'scale(1.05)';
+      }
+    });
+
+    // Actualizar contenido con mejor manejo de animaciones
+    const contents = document.querySelectorAll('.slide-content');
+    contents.forEach((content, index) => {
+      if (content instanceof HTMLElement) {
+        const slideType = heroSlides[index].type;
+        const targetContent = document.querySelector(`.${slideType}-slide`);
+        if (targetContent instanceof HTMLElement) {
+          if (index === currentSlideIndex) {
+            // Activar slide actual
+            targetContent.style.opacity = '1';
+            targetContent.style.transform = 'translateY(0)';
+            // Forzar reflow para reiniciar animaciones
+            targetContent.offsetHeight;
+            // Agregar clases de animación
+            targetContent.classList.add('active-slide');
+          } else {
+            // Desactivar slide
+            targetContent.style.opacity = '0';
+            targetContent.style.transform = 'translateY(20px)';
+            targetContent.classList.remove('active-slide');
+          }
+        }
+      }
+    });
+
+    // Actualizar indicadores
+    const indicators = document.querySelectorAll('.indicator');
+    indicators.forEach((indicator, index) => {
+      if (indicator instanceof HTMLElement) {
+        indicator.classList.toggle('bg-emerald-400', index === currentSlideIndex);
+        indicator.classList.toggle('scale-125', index === currentSlideIndex);
+        indicator.classList.toggle('bg-white/30', index !== currentSlideIndex);
+      }
+    });
+
+    // Reiniciar barra de progreso
+    if (progressBar) {
+      progressBar.style.width = '0%';
+      if (isAutoPlaying) {
+        setTimeout(() => {
+          if (progressBar) progressBar.style.width = '100%';
+        }, 50);
+      }
+    }
+  }
+
+  function nextSlide() {
+    currentSlideIndex = (currentSlideIndex + 1) % heroSlides.length;
+    updateSlide();
+    isAutoPlaying = false;
+  }
+
+  function prevSlide() {
+    currentSlideIndex = (currentSlideIndex - 1 + heroSlides.length) % heroSlides.length;
+    updateSlide();
+    isAutoPlaying = false;
+  }
+
+  function goToSlide(index) {
+    currentSlideIndex = index;
+    updateSlide();
+    isAutoPlaying = false;
+  }
+
+  function startAutoPlay() {
+    if (autoPlayInterval) clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(() => {
+      if (isAutoPlaying) {
+        nextSlide();
+      }
+    }, 8000);
+  }
+
+  function stopAutoPlay() {
+    isAutoPlaying = false;
+    if (autoPlayInterval) {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = null;
+    }
+  }
+
+  // Event listeners
+  document.addEventListener('DOMContentLoaded', () => {
+    progressBar = document.getElementById('progress-bar');
+
+    // Botones de navegación
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', prevSlide);
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', nextSlide);
+    }
+
+    // Indicadores
+    const indicators = document.querySelectorAll('.indicator');
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => goToSlide(index));
+    });
+
+    // Formulario
+    const form = document.getElementById('consultation-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        console.log('Form submitted:', Object.fromEntries(formData));
+        // Aquí iría la lógica de envío del formulario
+        alert('¡Gracias! Nos contactaremos contigo en 24 horas.');
+        form.reset();
+      });
+    }
+
+    // Iniciar autoplay
+    updateSlide();
+    startAutoPlay();
+
+    // Pausar autoplay en hover
+    const section = document.getElementById('inicio');
+    if (section) {
+      section.addEventListener('mouseenter', stopAutoPlay);
+      section.addEventListener('mouseleave', () => {
+        isAutoPlaying = true;
+        startAutoPlay();
+      });
+    }
+  });
+</script>
+
+<style>
+  /* Estilos de posicionamiento corregidos */
+  .slide-content {
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1200px;
+    transition: all 0.8s ease;
+  }
+
+  /* Ajustes específicos para cada tipo de slide */
+  .stats-slide {
+    text-align: center;
+  }
+  .impact-slide,
+  .form-slide {
+    text-align: left;
+  }
+
+  /* Asegurar que el grid del formulario se muestre correctamente */
+  .form-slide .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .form-slide .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* Ajustes responsivos para el contenido */
+  @media (max-width: 768px) {
+    .slide-content {
+      padding: 0 1rem;
+      width: 95%;
+    }
+    
+    h1 {
+      font-size: 2.5rem !important;
+    }
+    
+    .stats-slide .grid {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 1rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .stats-slide .grid {
+      grid-template-columns: 1fr !important;
+    }
+    
+    h1 {
+      font-size: 2rem !important;
+    }
+  }
+
+  /* Animaciones (mantener tus animaciones existentes) */
+  @keyframes float-0 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-20px) translateX(10px); }
+    50% { transform: translateY(-40px) translateX(0px); }
+    75% { transform: translateY(-20px) translateX(-10px); }
+  }
+
+  @keyframes float-1 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-30px) translateX(-15px); }
+    50% { transform: translateY(-60px) translateX(0px); }
+    75% { transform: translateY(-30px) translateX(15px); }
+  }
+
+  @keyframes float-2 {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-25px) translateX(20px); }
+    50% { transform: translateY(-50px) translateX(0px); }
+    75% { transform: translateY(-25px) translateX(-20px); }
+  }
+
+  .animate-float-0 { animation: float-0 12s ease-in-out infinite; }
+  .animate-float-1 { animation: float-1 12s ease-in-out infinite; }
+  .animate-float-2 { animation: float-2 12s ease-in-out infinite; }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-delay {
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-2 {
+    animation: fadeIn 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-3 {
+    animation: fadeIn 0.8s ease-out 0.9s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-4 {
+    animation: fadeIn 0.8s ease-out 1.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+
+  .animate-slide-in-up {
+    animation: slideInUp 0.8s ease-out forwards;
+  }
+
+  .animate-slide-in-up-delay {
+    animation: slideInUp 0.8s ease-out 0.3s forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mejoras de rendimiento para animaciones */
+  .slide-background,
+  .slide-content {
+    will-change: transform, opacity;
+  }
+
+  /* Asegurar que los slides inactivos no bloqueen interacciones */
+  .slide-content {
+    pointer-events: none;
+  }
+
+  .slide-content.opacity-100 {
+    pointer-events: all;
+  }
+</style>

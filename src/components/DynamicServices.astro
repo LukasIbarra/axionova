@@ -1,0 +1,445 @@
+---
+// Services data with detailed information
+const services = [
+  {
+    id: 1,
+    icon: "⛏️",
+    title: "Extracción Inteligente",
+    shortDesc: "IA y automatización para máxima eficiencia",
+    fullDesc: "Revolucionamos la extracción con tecnología de inteligencia artificial que predice, optimiza y automatiza cada proceso para maximizar la productividad mientras minimiza el impacto ambiental.",
+    features: ["IA Predictiva", "Automatización Completa", "Monitoreo 24/7", "Análisis en Tiempo Real"],
+    benefits: "Aumenta la productividad hasta 300% y reduce costos operativos en 45%",
+    gradient: "from-orange-500/20 to-red-500/20",
+    borderColor: "border-orange-500/30",
+    accentColor: "text-orange-400"
+  },
+  {
+    id: 2,
+    icon: "🛡️",
+    title: "Seguridad Total",
+    shortDesc: "Protocolos avanzados de protección integral",
+    fullDesc: "Implementamos los más altos estándares de seguridad mundial con tecnología avanzada de monitoreo, protocolos automatizados y sistemas de alerta temprana para garantizar cero accidentes.",
+    features: ["Certificación ISO 45001", "Monitoreo Biométrico", "Alertas Predictivas", "Equipos Inteligentes"],
+    benefits: "99.9% de índice de seguridad con cero accidentes en los últimos 5 años",
+    gradient: "from-emerald-500/20 to-green-500/20",
+    borderColor: "border-emerald-500/30",
+    accentColor: "text-emerald-400"
+  },
+  {
+    id: 3,
+    icon: "🖥️",
+    title: "Análisis de Datos",
+    shortDesc: "Big Data y Machine Learning avanzado",
+    fullDesc: "Utilizamos algoritmos de machine learning y big data para analizar patrones, predecir tendencias del mercado y optimizar cada aspecto de las operaciones mineras con precisión científica.",
+    features: ["Machine Learning", "Predictive Analytics", "Dashboard en Tiempo Real", "Reportes Automáticos"],
+    benefits: "Predicciones con 99.2% de precisión y decisiones basadas en datos en tiempo real",
+    gradient: "from-blue-500/20 to-purple-500/20",
+    borderColor: "border-blue-500/30",
+    accentColor: "text-blue-400"
+  },
+  {
+    id: 4,
+    icon: "🌱",
+    title: "Sostenibilidad",
+    shortDesc: "Minería responsable y ecológica",
+    fullDesc: "Desarrollamos prácticas mineras sostenibles que respetan el medio ambiente, utilizan energías renovables y implementan programas de recuperación ambiental para un futuro más verde.",
+    features: ["Emisiones Neutrales", "Energía Renovable", "Recuperación Ambiental", "Economía Circular"],
+    benefits: "40% reducción en huella de carbono y 100% uso de energías renovables",
+    gradient: "from-green-500/20 to-emerald-500/20",
+    borderColor: "border-green-500/30",
+    accentColor: "text-green-400"
+  },
+  {
+    id: 5,
+    icon: "📊",
+    title: "Optimización",
+    shortDesc: "Mejora continua de procesos y ROI",
+    fullDesc: "Optimizamos continuamente todos los procesos operativos mediante análisis avanzado, automatización inteligente y mejoras iterativas para maximizar la rentabilidad y eficiencia.",
+    features: ["ROI Optimizado", "Reducción de Costos", "Eficiencia Mejorada", "Procesos Lean"],
+    benefits: "ROI mejorado en 85% y reducción de costos operativos del 30%",
+    gradient: "from-purple-500/20 to-pink-500/20",
+    borderColor: "border-purple-500/30",
+    accentColor: "text-purple-400"
+  },
+  {
+    id: 6,
+    icon: "⚙️",
+    title: "Mantenimiento",
+    shortDesc: "Mantenimiento predictivo inteligente",
+    fullDesc: "Sistema avanzado de mantenimiento predictivo que utiliza IoT, sensores inteligentes y algoritmos de IA para prevenir fallas antes de que ocurran, garantizando operación continua.",
+    features: ["Mantenimiento Predictivo", "IoT y Sensores", "Soporte 24/7", "Garantía Extendida"],
+    benefits: "95% reducción en tiempo de inactividad y extensión de vida útil de equipos en 40%",
+    gradient: "from-gray-500/20 to-slate-500/20",
+    borderColor: "border-gray-500/30",
+    accentColor: "text-gray-400"
+  }
+];
+---
+
+<section id="servicios-dinamicos" class="py-20 bg-gray-900 relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0" style={{
+      backgroundImage: `radial-gradient(circle at 20% 80%, #10b981 0%, transparent 50%),
+                       radial-gradient(circle at 80% 20%, #f97316 0%, transparent 50%),
+                       radial-gradient(circle at 40% 40%, #3b82f6 0%, transparent 50%)`
+    }}></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative">
+    <!-- Header -->
+    <div class="text-center mb-16 animate-fade-in">
+      <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-2 mb-4">
+        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <span class="text-emerald-400 font-medium">Servicios Integrales</span>
+      </div>
+
+      <h2 class="text-5xl md:text-6xl font-bold text-white mb-6">
+        Soluciones
+        <br />
+        <span class="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+          Revolucionarias
+        </span>
+      </h2>
+
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+        Transformamos la industria minera con un ecosistema completo de servicios
+        que integran tecnología de vanguardia, seguridad total y sostenibilidad.
+      </p>
+    </div>
+
+    <!-- Interactive Services Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+      <!-- Services List -->
+      <div class="lg:col-span-1 space-y-4">
+        {services.map((service, index) => (
+          <div
+            class={`service-item relative p-6 rounded-2xl cursor-pointer transition-all duration-500 group animate-fade-in`}
+            style={`animation-delay: ${index * 0.1}s`}
+            data-service-id={service.id}
+          >
+            <!-- Background Glow Effect -->
+            <div class="glow-effect absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500"></div>
+
+            <div class="relative z-10 flex items-start space-x-4">
+              <div class="service-icon w-12 h-12 rounded-xl flex items-center justify-center text-gray-400 bg-black/50 transition-all duration-300">
+                <span class="text-2xl">{service.icon}</span>
+              </div>
+
+              <div class="flex-1">
+                <h3 class="service-title font-semibold mb-2 text-gray-300 transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p class="service-desc text-sm text-gray-500 transition-colors duration-300">
+                  {service.shortDesc}
+                </p>
+              </div>
+
+              <svg class="service-chevron w-5 h-5 text-gray-600 group-hover:text-gray-400 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Service Details -->
+      <div class="lg:col-span-2">
+        <div class="service-details bg-black/40 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 h-full transition-all duration-600">
+          {services.map((service, index) => (
+            <div
+              class={`service-detail ${index === 0 ? 'active' : ''}`}
+              data-service-id={service.id}
+            >
+              <!-- Service Header -->
+              <div class="flex items-start justify-between mb-6">
+                <div class="flex items-center space-x-4">
+                  <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-emerald-500 flex items-center justify-center text-white">
+                    <span class="text-2xl">{service.icon}</span>
+                  </div>
+                  <div>
+                    <h3 class="text-2xl font-bold text-white mb-1">
+                      {service.title}
+                    </h3>
+                    <p class="text-emerald-400">
+                      {service.shortDesc}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="w-8 h-8 bg-emerald-500/20 rounded-full flex items-center justify-center">
+                  <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <p class="text-gray-300 mb-6 leading-relaxed">
+                {service.fullDesc}
+              </p>
+
+              <!-- Features -->
+              <div class="mb-6">
+                <h4 class="text-white font-semibold mb-3">Características Principales:</h4>
+                <div class="grid grid-cols-2 gap-3">
+                  {service.features.map((feature, featureIndex) => (
+                    <div class="flex items-center space-x-2">
+                      <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                      <span class="text-gray-300 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Benefits -->
+              <div class="bg-gradient-to-r from-emerald-900/20 to-orange-900/20 border border-emerald-500/20 rounded-xl p-4 mb-6">
+                <h4 class="text-emerald-400 font-semibold mb-2">Beneficios Comprobados:</h4>
+                <p class="text-gray-300 text-sm">{service.benefits}</p>
+              </div>
+
+              <!-- CTA -->
+              <div class="flex flex-col sm:flex-row gap-4">
+                <button class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-0 py-3 px-6 rounded-xl font-semibold flex-1 group transition-all duration-300">
+                  <span>Solicitar Demo</span>
+                  <svg class="w-4 h-4 ml-2 inline group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </button>
+                <button class="border border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 py-3 px-6 rounded-xl font-semibold transition-all duration-300">
+                  Más Información
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="text-center animate-fade-in" style="animation-delay: 0.8s">
+      <div class="bg-gradient-to-r from-orange-900/20 via-gray-900/20 to-emerald-900/20 border border-orange-500/20 rounded-2xl p-8">
+        <h3 class="text-2xl font-bold text-white mb-4">
+          ¿Listo para Transformar tu Operación Minera?
+        </h3>
+        <p class="text-gray-400 mb-6 max-w-2xl mx-auto">
+          Descubre cómo nuestras soluciones integrales pueden revolucionar
+          tu empresa y llevarte al siguiente nivel de la industria minera.
+        </p>
+        <button class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-0 py-4 px-8 rounded-xl font-semibold text-lg group transition-all duration-300 shadow-lg hover:shadow-xl">
+          <span>Obtener Consultoría Gratuita</span>
+          <svg class="w-5 h-5 ml-2 inline group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Interactive services functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const serviceItems = document.querySelectorAll('.service-item');
+    const serviceDetails = document.querySelectorAll('.service-detail');
+    let activeServiceId = 1;
+
+    function updateActiveService(serviceId: number) {
+      // Remove active class from all items
+      serviceItems.forEach(item => {
+        const glowEffect = item.querySelector('.glow-effect') as HTMLElement;
+        const serviceIcon = item.querySelector('.service-icon') as HTMLElement;
+        const serviceTitle = item.querySelector('.service-title') as HTMLElement;
+        const serviceDesc = item.querySelector('.service-desc') as HTMLElement;
+        const serviceChevron = item.querySelector('.service-chevron') as HTMLElement;
+
+        item.classList.remove('active');
+        if (glowEffect) glowEffect.style.opacity = '0';
+        if (serviceIcon) {
+          serviceIcon.classList.remove('text-orange-400', 'text-emerald-400', 'text-blue-400', 'text-green-400', 'text-purple-400', 'text-gray-400');
+          serviceIcon.classList.add('text-gray-400');
+        }
+        if (serviceTitle) {
+          serviceTitle.classList.remove('text-white');
+          serviceTitle.classList.add('text-gray-300');
+        }
+        if (serviceDesc) {
+          serviceDesc.classList.remove('text-gray-300');
+          serviceDesc.classList.add('text-gray-500');
+        }
+        if (serviceChevron) {
+          serviceChevron.classList.remove('text-emerald-400', 'rotate-90');
+          serviceChevron.classList.add('text-gray-600');
+        }
+        item.classList.remove('bg-gradient-to-r', 'from-orange-500/20', 'to-red-500/20', 'from-emerald-500/20', 'to-green-500/20', 'from-blue-500/20', 'to-purple-500/20', 'from-purple-500/20', 'to-pink-500/20', 'from-gray-500/20', 'to-slate-500/20');
+        item.classList.add('bg-black/30');
+        item.classList.remove('border-orange-500/30', 'border-emerald-500/30', 'border-blue-500/30', 'border-green-500/30', 'border-purple-500/30', 'border-gray-500/30');
+        item.classList.add('border-gray-800');
+      });
+
+      // Add active class to selected item
+      const activeItem = document.querySelector(`[data-service-id="${serviceId}"]`) as HTMLElement;
+      if (activeItem) {
+        const glowEffect = activeItem.querySelector('.glow-effect') as HTMLElement;
+        const serviceIcon = activeItem.querySelector('.service-icon') as HTMLElement;
+        const serviceTitle = activeItem.querySelector('.service-title') as HTMLElement;
+        const serviceDesc = activeItem.querySelector('.service-desc') as HTMLElement;
+        const serviceChevron = activeItem.querySelector('.service-chevron') as HTMLElement;
+
+        activeItem.classList.add('active');
+        if (glowEffect) glowEffect.style.opacity = '1';
+        if (serviceIcon) {
+          serviceIcon.classList.remove('text-gray-400');
+          serviceIcon.classList.add('text-orange-400');
+        }
+        if (serviceTitle) {
+          serviceTitle.classList.remove('text-gray-300');
+          serviceTitle.classList.add('text-white');
+        }
+        if (serviceDesc) {
+          serviceDesc.classList.remove('text-gray-500');
+          serviceDesc.classList.add('text-gray-300');
+        }
+        if (serviceChevron) {
+          serviceChevron.classList.remove('text-gray-600');
+          serviceChevron.classList.add('text-emerald-400', 'rotate-90');
+        }
+        activeItem.classList.remove('bg-black/30');
+        activeItem.classList.add('bg-gradient-to-r', 'from-orange-500/20', 'to-red-500/20');
+        activeItem.classList.remove('border-gray-800');
+        activeItem.classList.add('border-orange-500/30');
+      }
+
+      // Update service details
+      serviceDetails.forEach(detail => {
+        const detailElement = detail as HTMLElement;
+        detail.classList.remove('active');
+        detailElement.style.opacity = '0';
+        detailElement.style.transform = 'translateY(20px) scale(0.95)';
+      });
+
+      const activeDetail = document.querySelector(`.service-detail[data-service-id="${serviceId}"]`) as HTMLElement;
+      if (activeDetail) {
+        setTimeout(() => {
+          activeDetail.classList.add('active');
+          activeDetail.style.opacity = '1';
+          activeDetail.style.transform = 'translateY(0) scale(1)';
+        }, 150);
+      }
+
+      activeServiceId = serviceId;
+    }
+
+    // Add click event listeners
+    serviceItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const serviceIdAttr = item.getAttribute('data-service-id');
+        if (serviceIdAttr) {
+          const serviceId = parseInt(serviceIdAttr);
+          updateActiveService(serviceId);
+        }
+      });
+
+      // Add hover effects
+      item.addEventListener('mouseenter', () => {
+        if (!item.classList.contains('active')) {
+          const serviceIcon = item.querySelector('.service-icon') as HTMLElement;
+          const serviceChevron = item.querySelector('.service-chevron') as HTMLElement;
+          if (serviceIcon) {
+            serviceIcon.classList.remove('text-gray-400');
+            serviceIcon.classList.add('text-orange-400');
+          }
+          if (serviceChevron) {
+            serviceChevron.classList.remove('text-gray-600');
+            serviceChevron.classList.add('text-gray-400');
+          }
+        }
+      });
+
+      item.addEventListener('mouseleave', () => {
+        if (!item.classList.contains('active')) {
+          const serviceIcon = item.querySelector('.service-icon') as HTMLElement;
+          const serviceChevron = item.querySelector('.service-chevron') as HTMLElement;
+          if (serviceIcon) {
+            serviceIcon.classList.remove('text-orange-400');
+            serviceIcon.classList.add('text-gray-400');
+          }
+          if (serviceChevron) {
+            serviceChevron.classList.remove('text-gray-400');
+            serviceChevron.classList.add('text-gray-600');
+          }
+        }
+      });
+    });
+
+    // Initialize first service as active
+    updateActiveService(1);
+  });
+</script>
+
+<style>
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  /* Service details transitions */
+  .service-detail {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.6s ease-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem;
+  }
+
+  .service-detail.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    position: relative;
+  }
+
+  /* Chevron rotation */
+  .rotate-90 {
+    transform: rotate(90deg);
+  }
+
+  /* Glow effect */
+  .glow-effect {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(16, 185, 129, 0.1));
+    filter: blur(20px);
+  }
+
+  /* Hover effects */
+  .service-item:hover {
+    transform: translateY(-2px);
+  }
+
+  .service-item.active {
+    transform: scale(1.02);
+  }
+
+  /* Button hover effects */
+  .group:hover .group-hover\:translate-x-1 {
+    transform: translateX(4px);
+  }
+</style>

@@ -1,163 +1,139 @@
 ---
-// Definimos los servicios con iconos e información detallada
-// Este arreglo contiene los datos de cada servicio que se mostrará en la sección
-const servicios = [
+// Services data with icons and information
+const services = [
   {
-    titulo: "Optimización de Procesos Mineros",
-    descripcion: "Maximizamos la eficiencia operativa mediante análisis avanzado y rediseño de procesos mineros.",
-    icono: "⛏️",
-    caracteristicas: ["Análisis de procesos", "Mejora continua", "Reducción de costos operativos", "Aumento productividad"],
-    colorIcono: "bg-gradient-to-br from-axionova-orange to-orange-600",
-    delay: "100ms"
+    icon: "⛏️",
+    title: "Extracción Inteligente",
+    description: "Tecnología de extracción automatizada que maximiza la eficiencia y minimiza el impacto ambiental.",
+    features: ["IA Predictiva", "Automatización", "Monitoreo 24/7"],
+    color: "from-orange-500 to-orange-600"
   },
   {
-    titulo: "Gestión Integral de Activos",
-    descripcion: "Extendemos la vida útil de sus equipos con estrategias de mantenimiento predictivo y proactivo.",
-    icono: "📊",
-    caracteristicas: ["Inventario digital", "Análisis de confiabilidad", "Estrategias mantenimiento", "Optimización ciclo de vida"],
-    colorIcono: "bg-gradient-to-br from-axionova-green to-green-600",
-    delay: "200ms"
+    icon: "🛡️",
+    title: "Seguridad Total",
+    description: "Protocolos de seguridad avanzados que garantizan cero accidentes y máxima protección.",
+    features: ["Certificación ISO", "Protocolos Rigurosos", "Equipos Especializados"],
+    color: "from-green-500 to-green-600"
   },
   {
-    titulo: "Consultoría Lean & Six Sigma",
-    descripcion: "Implementamos metodologías de excelencia operacional adaptadas al contexto minero chileno.",
-    icono: "⚡",
-    caracteristicas: ["Eliminación desperdicios", "Mejora calidad procesos", "Capacitación especializada", "Certificación internacional"],
-    colorIcono: "bg-gradient-to-br from-axionova-orange to-orange-600",
-    delay: "300ms"
+    icon: "🖥️",
+    title: "Análisis de Datos",
+    description: "Big Data y machine learning para optimizar operaciones y predecir tendencias del mercado.",
+    features: ["Machine Learning", "Reportes en Tiempo Real", "Predicciones Precisas"],
+    color: "from-blue-500 to-blue-600"
   },
   {
-    titulo: "Analítica Avanzada & Big Data",
-    descripcion: "Transformamos datos en insights accionables para la toma de decisiones estratégicas.",
-    icono: "🔍",
-    caracteristicas: ["Business Intelligence", "Dashboards operativos", "Machine Learning", "Predicción de fallas"],
-    colorIcono: "bg-gradient-to-br from-axionova-green to-green-600",
-    delay: "400ms"
+    icon: "🌱",
+    title: "Sostenibilidad",
+    description: "Comprometidos con prácticas mineras sostenibles que respetan el medio ambiente.",
+    features: ["Emisiones Cero", "Recuperación Ambiental", "Energías Renovables"],
+    color: "from-green-500 to-emerald-600"
   },
   {
-    titulo: "Automatización & Digitalización",
-    descripcion: "Implementamos soluciones tecnológicas para operaciones más inteligentes y seguras.",
-    icono: "🤖",
-    caracteristicas: ["IoT en operaciones", "Automatización flujos", "Control inteligente", "Digital twins"],
-    colorIcono: "bg-gradient-to-br from-axionova-orange to-orange-600",
-    delay: "500ms"
+    icon: "📊",
+    title: "Optimización",
+    description: "Mejora continua de procesos para maximizar rentabilidad y eficiencia operacional.",
+    features: ["ROI Mejorado", "Costos Reducidos", "Productividad +300%"],
+    color: "from-purple-500 to-purple-600"
   },
   {
-    titulo: "Gestión de Energía Sustentable",
-    descripcion: "Optimizamos el consumo energético con soluciones sostenibles y de alto impacto.",
-    icono: "💡",
-    caracteristicas: ["Auditoría energética", "Energías renovables", "Reducción huella carbono", "Certificación sustentable"],
-    colorIcono: "bg-gradient-to-br from-axionova-green to-green-600",
-    delay: "600ms"
+    icon: "⚙️",
+    title: "Mantenimiento",
+    description: "Mantenimiento predictivo que previene fallas y garantiza operación continua.",
+    features: ["Mantenimiento Predictivo", "Soporte 24/7", "Garantía Extendida"],
+    color: "from-gray-500 to-gray-600"
   }
 ];
 ---
 
-<!-- Sección de Servicios -->
-<section id="servicios" class="py-24 bg-axionova-dark overflow-hidden">
-  <!-- Efectos de fondo decorativos para dar profundidad -->
-  <div class="absolute inset-0 opacity-5">
-    <div class="absolute top-0 left-0 w-72 h-72 bg-axionova-orange rounded-full filter blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-72 h-72 bg-axionova-green rounded-full filter blur-3xl"></div>
-  </div>
+<section id="servicios" class="py-20 bg-gray-900">
+  <div class="container mx-auto px-6">
+    <!-- Header -->
+    <div class="text-center mb-16 animate-fade-in">
+      <div class="inline-flex items-center space-x-2 bg-orange-500/10 border border-orange-500/20 rounded-full px-4 py-2 mb-4">
+        <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <span class="text-orange-400 font-medium">Nuestros Servicios</span>
+      </div>
 
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <!-- Encabezado de la sección con título y descripción -->
-    <div class="text-center mb-20">
-      <span class="text-axionova-orange font-semibold tracking-wider uppercase text-sm mb-4 block">Nuestros Servicios</span>
-      <h2 class="text-4xl md:text-5xl font-bold mb-6">Soluciones <span class="gradient-text-orange">Integrales</span> para la Minería</h2>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-        Ofrecemos servicios especializados que combinan expertise técnico, innovación tecnológica y sostenibilidad para transformar sus operaciones.
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Soluciones Integrales
+        <br />
+        <span class="bg-gradient-to-r from-orange-400 to-green-400 bg-clip-text text-transparent">
+          para la Minería Moderna
+        </span>
+      </h2>
+
+      <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+        Ofrecemos un ecosistema completo de servicios que transforman la manera
+        de hacer minería, priorizando seguridad, eficiencia y sostenibilidad.
       </p>
     </div>
 
-    <!-- Grid responsivo para mostrar cada servicio -->
+    <!-- Services Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {servicios.map((servicio, index) => (
-        <div 
-          class="group relative bg-gray-900/70 backdrop-blur-md rounded-2xl p-8 border border-gray-800 hover:border-axionova-orange/30 transition-all duration-500 hover:-translate-y-2 shadow-xl hover:shadow-2xl hover:shadow-axionova-orange/10 animate-fade-in-up"
-          style={`animation-delay: ${servicio.delay}`}
+      {services.map((service, index) => (
+        <div
+          class="bg-black/50 border border-gray-800 hover:border-gray-700 transition-all duration-300 group hover:transform hover:scale-105 rounded-xl overflow-hidden animate-fade-in"
+          style={`animation-delay: ${index * 0.1}s`}
         >
-          <!-- Efecto de brillo al hacer hover para resaltar -->
-          <div class="absolute inset-0 bg-gradient-to-br from-axionova-orange/0 via-axionova-orange/5 to-axionova-green/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-          
-          <!-- Icono del servicio con fondo degradado -->
-          <div class={`relative z-10 w-20 h-20 ${servicio.colorIcono} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-            <span class="text-3xl">{servicio.icono}</span>
+          <!-- Card Header -->
+          <div class="p-6">
+            <div class={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+              <span class="text-2xl">{service.icon}</span>
+            </div>
+
+            <h3 class="text-xl text-white mb-2 font-semibold">
+              {service.title}
+            </h3>
           </div>
 
-          <!-- Título del servicio -->
-          <h3 class="text-2xl font-bold mb-4 relative z-10 group-hover:text-white transition-colors duration-300">
-            {servicio.titulo}
-          </h3>
-          
-          <!-- Descripción breve del servicio -->
-          <p class="text-gray-300 mb-6 relative z-10">
-            {servicio.descripcion}
-          </p>
+          <!-- Card Content -->
+          <div class="px-6 pb-6">
+            <p class="text-gray-400 mb-6">
+              {service.description}
+            </p>
 
-          <!-- Lista de características o beneficios -->
-          <ul class="space-y-3 relative z-10">
-            {servicio.caracteristicas.map((caracteristica, i) => (
-              <li class="flex items-center text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                <svg class="w-4 h-4 text-axionova-orange mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                {caracteristica}
-              </li>
-            ))}
-          </ul>
+            {/* Features */}
+            <div class="space-y-2 mb-6">
+              {service.features.map((feature, featureIndex) => (
+                <div class="flex items-center space-x-2">
+                  <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span class="text-sm text-gray-300">{feature}</span>
+                </div>
+              ))}
+            </div>
 
-          <!-- Botón para solicitar información -->
-          <div class="mt-8 relative z-10">
-            <a href="#contacto" class="inline-flex items-center text-sm font-semibold text-axionova-orange group-hover:text-axionova-green transition-colors duration-300">
-              Solicitar información
-              <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            {/* CTA */}
+            <button class="w-full text-orange-400 hover:text-orange-300 hover:bg-orange-500/10 py-3 px-4 rounded-lg transition-all duration-300 group/btn flex items-center justify-center border border-transparent hover:border-orange-500/30">
+              <span>Saber Más</span>
+              <svg class="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
-            </a>
+            </button>
           </div>
         </div>
       ))}
     </div>
 
-    <!-- Llamado a la acción personalizado al final de la sección -->
-    <div class="text-center mt-20">
-      <div class="bg-gradient-to-r from-axionova-dark via-gray-900 to-axionova-dark rounded-2xl p-12 border border-gray-800 relative overflow-hidden">
-        <!-- Efectos de fondo para profundidad -->
-        <div class="absolute inset-0 opacity-10">
-          <div class="absolute top-0 right-0 w-48 h-48 bg-axionova-orange rounded-full filter blur-3xl"></div>
-          <div class="absolute bottom-0 left-0 w-48 h-48 bg-axionova-green rounded-full filter blur-3xl"></div>
-        </div>
-        
-        <div class="relative z-10">
-          <h3 class="text-3xl font-bold mb-6">¿Necesita una solución personalizada?</h3>
-          <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Nuestros expertos están listos para analizar sus desafíos y desarrollar una estrategia a medida para su operación.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#contacto" class="btn-premium btn-premium-orange">
-              <span>Contactar a un experto</span>
-              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-              </svg>
-            </a>
-            <a href="#casos" class="btn-premium btn-premium-outline">
-              <span>Ver casos de éxito</span>
-              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
+    <!-- Bottom CTA -->
+    <div class="text-center mt-16 animate-fade-in" style="animation-delay: 0.8s">
+      <button class="bg-gradient-to-r from-orange-500 to-green-500 hover:from-orange-600 hover:to-green-600 text-white border-0 py-4 px-8 rounded-xl font-semibold text-lg group transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center mx-auto">
+        <span>Ver Todos los Servicios</span>
+        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </button>
     </div>
   </div>
 </section>
 
-<style is:global>
-  /* Animaciones para la sección de servicios */
-  @keyframes fadeInUp {
+<style>
+  /* Animations */
+  @keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(30px);
@@ -168,65 +144,26 @@ const servicios = [
     }
   }
 
-  /* Clase para animar la entrada con fade y movimiento hacia arriba */
-  .animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
     opacity: 0;
   }
 
-  /* Estilos para botones premium con gradientes y sombras */
-  .btn-premium {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-radius: 0.75rem;
-    font-weight: 700;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  /* Hover effects */
+  .group:hover .group-hover\:scale-105 {
+    transform: scale(1.05);
   }
 
-  .btn-premium-orange {
-    background: linear-gradient(to right, #FF6A00, #ff8533);
-    color: #fff;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  .group:hover .group-hover\:scale-110 {
+    transform: scale(1.1);
   }
 
-  .btn-premium-orange:hover {
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.15);
-    transform: translateY(-0.25rem);
+  .group-hover\:translate-x-1:hover svg {
+    transform: translateX(4px);
   }
 
-  .btn-premium-outline {
-    border-width: 2px;
-    border-color: #2BB673;
-    color: #2BB673;
-    background-color: transparent;
-  }
-
-  .btn-premium-outline:hover {
-    background-color: rgba(43, 182, 115, 0.1);
-    transform: translateY(-0.25rem);
-  }
-
-  /* Efectos de texto con gradiente para títulos */
-  .gradient-text-orange {
-    background: linear-gradient(135deg, var(--axionova-orange), var(--axionova-orange-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Variables de color para mantener consistencia con el diseño */
-  :global(:root) {
-    --axionova-orange: #FF7A00;
-    --axionova-orange-light: #FF9A40;
-    --axionova-green: #00C853;
-    --axionova-green-light: #00E676;
-    --axionova-dark: #0F172A;
+  /* Button hover effects */
+  .group\/btn:hover .group-hover\/btn\:translate-x-1 {
+    transform: translateX(4px);
   }
 </style>

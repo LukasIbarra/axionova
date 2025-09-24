@@ -1,8 +1,4 @@
 ---
-import EmblaCarousel from 'embla-carousel';
-import Autoplay from 'embla-carousel-autoplay';
-
-
 const heroSlides = [
   {
     id: 1,
@@ -39,56 +35,10 @@ const heroSlides = [
   }
 ];
 
-// Variables para controlar el slide actual y autoplay
 let currentSlide = 0;
-let intervalId = null;
+---
 
-// Función para cambiar al siguiente slide
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % heroSlides.length;
-  updateSlide();
-}
-
-// Función para cambiar al slide anterior
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + heroSlides.length) % heroSlides.length;
-  updateSlide();
-}
-
-// Función para ir a un slide específico
-function goToSlide(index) {
-  currentSlide = index;
-  updateSlide();
-}
-
-// Actualiza la visibilidad de los slides y los indicadores
-function updateSlide() {
-  const slides = document.querySelectorAll('.slide');
-  const indicators = document.querySelectorAll('.indicator');
-  slides.forEach((slide, index) => {
-    slide.style.opacity = index === currentSlide ? '1' : '0';
-    slide.style.zIndex = index === currentSlide ? '10' : '0';
-  });
-  indicators.forEach((indicator, index) => {
-    indicator.classList.toggle('bg-emerald-400', index === currentSlide);
-    indicator.classList.toggle('scale-125', index === currentSlide);
-    indicator.classList.toggle('bg-white/30', index !== currentSlide);
-  });
-}
-
-// Inicia el autoplay
-function startAutoplay() {
-  intervalId = setInterval(nextSlide, 6000);
-}
-
-// Detiene el autoplay
-function stopAutoplay() {
-  clearInterval(intervalId);
-  intervalId = null;
-}
-
-<!-- Move client-side logic to a script tag that runs on load -->
-<script is:inline>
+<script is:inline define:vars={{ heroSlides }}>
   // Variables para controlar el slide actual y autoplay
   let currentSlide = 0;
   let intervalId = null;
@@ -112,13 +62,17 @@ function stopAutoplay() {
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
     slides.forEach((slide, index) => {
-      slide.style.opacity = index === currentSlide ? '1' : '0';
-      slide.style.zIndex = index === currentSlide ? '10' : '0';
+      if (slide instanceof HTMLElement) {
+        slide.style.opacity = index === currentSlide ? '1' : '0';
+        slide.style.zIndex = index === currentSlide ? '10' : '0';
+      }
     });
     indicators.forEach((indicator, index) => {
-      indicator.classList.toggle('bg-emerald-400', index === currentSlide);
-      indicator.classList.toggle('scale-125', index === currentSlide);
-      indicator.classList.toggle('bg-white/30', index !== currentSlide);
+      if (indicator instanceof HTMLElement) {
+        indicator.classList.toggle('bg-emerald-400', index === currentSlide);
+        indicator.classList.toggle('scale-125', index === currentSlide);
+        indicator.classList.toggle('bg-white/30', index !== currentSlide);
+      }
     });
   }
 
@@ -135,19 +89,29 @@ function stopAutoplay() {
     updateSlide();
     startAutoplay();
 
-    document.getElementById('nextBtn').addEventListener('click', () => {
-      nextSlide();
-      stopAutoplay();
-    });
-    document.getElementById('prevBtn').addEventListener('click', () => {
-      prevSlide();
-      stopAutoplay();
-    });
-    document.querySelectorAll('.indicator').forEach((btn, index) => {
-      btn.addEventListener('click', () => {
-        goToSlide(index);
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const indicators = document.querySelectorAll('.indicator');
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
         stopAutoplay();
       });
+    }
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopAutoplay();
+      });
+    }
+    indicators.forEach((btn, index) => {
+      if (btn instanceof HTMLElement) {
+        btn.addEventListener('click', () => {
+          goToSlide(index);
+          stopAutoplay();
+        });
+      }
     });
   });
 </script>
@@ -178,7 +142,6 @@ function stopAutoplay() {
       class="slide"
       style={`background-image: url('${slide.image}'); opacity: 0; z-index: 0;`}
       aria-hidden={index !== currentSlide}
-      key={slide.id}
     >
       <div class="absolute inset-0 bg-black/60"></div>
       <div class="relative z-20 h-full flex items-center">
