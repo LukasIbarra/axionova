@@ -107,7 +107,7 @@ const heroSlides: Slide[] = [
         <span class="text-emerald-400 font-medium">Líder en Innovación Minera 2024</span>
       </div>
 
-        <h1 class="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-white mb-6 leading-tight">
           <span class="block animate-slide-in-left">El Futuro de la</span>
           <span class="block bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent animate-slide-in-right">Minería es Hoy</span>
         </h1>
@@ -167,7 +167,7 @@ const heroSlides: Slide[] = [
               <span class="text-orange-400 font-medium">Consultoría Gratuita</span>
             </div>
 
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               <span class="block animate-slide-in-left">¿Listo para</span>
               <span class="block bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent animate-slide-in-right">Transformar tu Operación?</span>
             </h1>
@@ -240,7 +240,7 @@ const heroSlides: Slide[] = [
           <span class="text-purple-400 font-medium">Líderes de la Industria</span>
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
           <span class="block animate-slide-in-up">Resultados que</span>
           <span class="block bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent animate-slide-in-up-delay">Hablan por Sí Solos</span>
         </h1>
@@ -503,9 +503,9 @@ const heroSlides: Slide[] = [
   /* Estilos de posicionamiento corregidos */
   .slide-content {
     position: absolute;
-    top: 12%;
-    left: 10%;
-    transform: translate(-50%, -50%);
+    top: 70%;
+    left: 5%;
+    transform: translate(0, -50%);
     width: 90%;
     max-width: 1200px;
     transition: all 0.8s ease;
@@ -536,27 +536,108 @@ const heroSlides: Slide[] = [
   /* Ajustes responsivos para el contenido */
   @media (max-width: 768px) {
     .slide-content {
-      padding: 0 1rem;
-      width: 95%;
+      padding: 0 0.5rem;
+      width: 90%;
+      top: 120%; /* bajar títulos para que no queden a la altura del logo */
+      text-align: center; /* centrar todo el contenido en móvil */
+      left: 0%;
+      transform: translate(-50%, -50%);
+      align-items: center;
+      justify-content: center;
     }
-    
-    h1 {
-      font-size: 2.5rem !important;
+
+    .slide-content .inline-flex {
+      display: none;
     }
+
+    .slide-content h1 {
+      font-size: 2.5rem; /* smaller title */
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .slide-content p {
+      font-size: 1rem; /* smaller paragraph */
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+
+    .slide-content button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+    }
+
+    /* Ajustes específicos para el slide 2 (form) */
+    .form-slide {
+      text-align: center;
+    }
+    .form-slide h1 {
     
+      margin-bottom: 1rem;
+    }
+    .form-slide .space-y-2 {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .form-slide form {
+      margin: 0 auto;
+      max-width: 320px; /* hacer el formulario un poco más pequeño */
+    }
+
+    .particles {
+      display: none;
+    }
+
+    #prev-btn, #next-btn {
+      display: none;
+    }
+
+    /* Ajustes para el slide 3 (stats) */
+    .stats-slide h1 {
+      
+      margin-bottom: 0.5rem;
+    }
+    .stats-slide p {
+      margin-bottom: 2rem; /* bajar párrafo */
+    }
     .stats-slide .grid {
-      grid-template-columns: 1fr 1fr !important;
+      grid-template-columns: repeat(2, 1fr) !important; /* 2 columnas por 2 filas */
       gap: 1rem !important;
+      max-width: 600px;
+      margin: 0 auto;
     }
   }
 
   @media (max-width: 480px) {
+    .slide-content {
+      top: 50%;
+      padding: 0 0.75rem;
+      width: 98%;
+    }
+
+    .slide-content h1 {
+      font-size: 1.8rem; /* even smaller title */
+      line-height: 1.1;
+    }
+
+    .slide-content p {
+      font-size: 0.9rem; /* smaller paragraph */
+      line-height: 1.3;
+    }
+
+    .slide-content button {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .slide-content .flex.items-center.space-x-3 {
+      display: none; /* hide highlight icons and text on very small */
+    }
+
     .stats-slide .grid {
       grid-template-columns: 1fr !important;
-    }
-    
-    h1 {
-      font-size: 2rem !important;
     }
   }
 
