@@ -5,12 +5,20 @@
 :root {
   --ff-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --ff-heading: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Paleta de colores ajustada */
+  --color-axionova-blue: #1E40AF; /* Azul para conectar con logo */
+  --color-axionova-orange: #FF6A00; /* Naranja importante para minería */
+  --color-axionova-dark-light: #2C2C2E; /* Oscuro aclarado para fondo */
+  --color-axionova-green: #2BB673; /* Verde para textos */
 }
 
 html {
   font-family: var(--ff-sans);
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
+  background-color: var(--color-axionova-dark-light);
+  color: var(--color-axionova-green);
 }
 
 body {
@@ -18,6 +26,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-axionova-dark-light);
+  color: var(--color-axionova-green);
 }
 
 /* Optimizaciones de rendimiento */
@@ -84,7 +94,7 @@ body {
 
 /* Gradientes premium */
 .gradient-premium {
-  background: linear-gradient(135deg, #0B0B0D 0%, #1a1a1a 50%, #0B0B0D 100%);
+  background: linear-gradient(135deg, var(--color-axionova-dark-light) 0%, #1a1a1a 50%, var(--color-axionova-dark-light) 100%);
 }
 
 .gradient-orange {
@@ -117,17 +127,17 @@ body {
 }
 
 .btn-premium-orange {
-  background-color: #FF6A00; /* Replace with your axionova-orange color code */
+  background-color: var(--color-axionova-orange);
   color: #fff;
 }
 
 .btn-premium-orange:hover {
-  background-color: #ff8533; /* Replace with your axionova-orange/90 color code */
+  background-color: #ff8533;
 }
 
 .btn-premium-white {
   background-color: #fff;
-  color: #18181b; /* Replace with your axionova-dark color code */
+  color: var(--color-axionova-dark-light);
 }
 .btn-premium-white:hover {
   background-color: #f3f4f6; /* Replace with your gray-100 color code */

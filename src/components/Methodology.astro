@@ -15,14 +15,14 @@ const whatWeDo = [
 ---
 
 
-<section id="metodologia" class="relative py-24 bg-gray-950 text-gray-100 overflow-hidden">
+<section id="metodologia" class="relative py-24 bg-white text-gray-900 overflow-hidden">
   <!-- Upper SVG Separator -->
   <div class="absolute top-0 left-0 w-full overflow-hidden">
     <svg class="relative block w-full h-16" viewBox="0 0 1200 120" preserveAspectRatio="none">
       <defs>
-        <linearGradient id="upperDarkGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#111827" />
-          <stop offset="100%" stop-color="#030712" />
+        <linearGradient id="upperBlueGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1e40af" />
+          <stop offset="100%" stop-color="#1e3a8a" />
         </linearGradient>
         <linearGradient id="upperOrangeGrad" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#f97316" />
@@ -30,30 +30,36 @@ const whatWeDo = [
         </linearGradient>
       </defs>
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#upperOrangeGrad)"></path>
-      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#upperDarkGrad)"></path>
-      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#upperDarkGrad)"></path>
+      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="url(#upperBlueGrad)"></path>
+      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="url(#upperBlueGrad)"></path>
     </svg>
   </div>
 
   <!-- Fondo con textura sutil -->
-  <div class="absolute inset-0 opacity-5 bg-[url('/textures/pattern.svg')] bg-repeat"></div>
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0" style={{
+      backgroundImage: `radial-gradient(circle at 20% 80%, #3b82f6 0%, transparent 50%),
+                       radial-gradient(circle at 80% 20%, #f97316 0%, transparent 50%),
+                       radial-gradient(circle at 40% 40%, #3b82f6 0%, transparent 50%)`
+    }}></div>
+  </div>
 
   <div class="relative max-w-7xl mx-auto px-6">
     <!-- Título -->
     <h2 class="text-5xl font-extrabold mb-16 text-center">
-      <span class="text-orange-500">Metodología</span> Lean Six Sigma
+      <span class="text-blue-500">Metodología</span> Lean Six Sigma
     </h2>
 
     <!-- Steps en Cards -->
     <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
       {methodologySteps.map((step, i) => (
-        <div class="bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/30 shadow-xl flex flex-col items-center text-center group transform transition duration-500 hover:scale-110 hover:border-orange-500 animate-fade-up"
+        <div class="bg-gray-50/80 backdrop-blur-sm rounded-2xl p-8 border border-blue-500/20 shadow-lg flex flex-col items-center text-center group transform transition duration-500 hover:scale-110 hover:border-blue-500 animate-fade-up"
              style={`animation-delay:${i * 200}ms`}>
-          <div class="w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-tr from-orange-600 to-orange-400 text-white mb-6 shadow-lg group-hover:scale-125 group-hover:rotate-6 transition-transform duration-700">
+          <div class="w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-tr from-blue-500 to-blue-400 text-white mb-6 shadow-lg group-hover:scale-125 group-hover:rotate-6 transition-transform duration-700">
             <i class={`fas fa-${step.icon} text-2xl`}></i>
           </div>
-          <h3 class="text-2xl font-semibold mb-3 text-orange-400">{step.title}</h3>
-          <p class="text-gray-300 leading-relaxed">{step.description}</p>
+          <h3 class="text-2xl font-semibold mb-3 text-blue-600">{step.title}</h3>
+          <p class="text-gray-700 leading-relaxed">{step.description}</p>
         </div>
       ))}
     </div>
@@ -62,52 +68,52 @@ const whatWeDo = [
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
       <!-- Imagen -->
       <div class="flex justify-center animate-fade-up" style="animation-delay:0.2s">
-        <img src="/public/sigma.webp" alt="Lean Six Sigma Methodology" class="max-w-full h-auto" />
+        <img src="/sigma.webp" alt="Lean Six Sigma Methodology" class="max-w-full h-auto" />
       </div>
       <!-- Texto y Estadísticas -->
       <div class="flex flex-col justify-center animate-fade-up" style="animation-delay:0.4s">
-        <p class="text-lg text-gray-300 leading-relaxed mb-8">
+        <p class="text-lg text-gray-700 leading-relaxed mb-8">
           Nuestra metodología combina Lean para eliminar desperdicios y Six Sigma para reducir variabilidad,
           logrando resultados medibles y sostenibles en procesos de transformación digital de la minería.
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div class="text-center">
-            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
               <i class="fas fa-chart-line text-white text-2xl"></i>
             </div>
-            <h4 class="text-3xl font-bold text-orange-400 mb-2">95%</h4>
-            <p class="text-gray-400 text-sm">Mejora en Eficiencia</p>
+            <h4 class="text-3xl font-bold text-blue-600 mb-2">95%</h4>
+            <p class="text-gray-600 text-sm">Mejora en Eficiencia</p>
           </div>
           <div class="text-center">
             <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
               <i class="fas fa-project-diagram text-white text-2xl"></i>
             </div>
-            <h4 class="text-3xl font-bold text-orange-400 mb-2">500+</h4>
-            <p class="text-gray-400 text-sm">Proyectos Completados</p>
+            <h4 class="text-3xl font-bold text-orange-600 mb-2">500+</h4>
+            <p class="text-gray-600 text-sm">Proyectos Completados</p>
           </div>
           <div class="text-center">
-            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
               <i class="fas fa-certificate text-white text-2xl"></i>
             </div>
-            <h4 class="text-3xl font-bold text-orange-400 mb-2">Black Belt</h4>
-            <p class="text-gray-400 text-sm">Equipo Certificado</p>
+            <h4 class="text-3xl font-bold text-blue-600 mb-2">Black Belt</h4>
+            <p class="text-gray-600 text-sm">Equipo Certificado</p>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Lo Que Hacemos -->
-    <div class="bg-gradient-to-br from-orange-950/40 to-black/50 border border-orange-600/30 rounded-3xl p-12 shadow-xl">
-      <h3 class="text-4xl font-bold text-orange-500 mb-12 text-center">Lo Que Hacemos</h3>
+    <div class="bg-gradient-to-br from-blue-50/80 to-gray-50/80 border border-blue-500/20 rounded-3xl p-12 shadow-lg">
+      <h3 class="text-4xl font-bold text-blue-600 mb-12 text-center">Lo Que Hacemos</h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
         {whatWeDo.map((item, i) => (
-          <div class="bg-black/50 backdrop-blur-sm rounded-2xl p-8 border border-orange-600/30 shadow-lg transform transition duration-500 hover:scale-105 hover:border-orange-500 animate-fade-up"
+          <div class="bg-gray-50/80 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/20 shadow-lg transform transition duration-500 hover:scale-105 hover:border-orange-500 animate-fade-up"
                style={`animation-delay:${i * 200}ms`}>
-            <h4 class="text-5xl font-extrabold mb-4 text-orange-500/80">
+            <h4 class="text-5xl font-extrabold mb-4 text-orange-600/80">
               {item.id.toString().padStart(2, '0')}
             </h4>
-            <h5 class="text-xl font-bold mb-3">{item.title}</h5>
-            <p class="text-gray-300 leading-relaxed">{item.description}</p>
+            <h5 class="text-xl font-bold mb-3 text-gray-900">{item.title}</h5>
+            <p class="text-gray-700 leading-relaxed">{item.description}</p>
           </div>
         ))}
       </div>
@@ -118,9 +124,9 @@ const whatWeDo = [
   <div class="absolute bottom-0 left-0 w-full overflow-hidden">
     <svg class="relative block w-full h-16" viewBox="0 0 1200 120" preserveAspectRatio="none">
       <defs>
-        <linearGradient id="lowerGrayGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#030712" />
-          <stop offset="100%" stop-color="#111827" />
+        <linearGradient id="lowerBlueGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1e3a8a" />
+          <stop offset="100%" stop-color="#1e40af" />
         </linearGradient>
         <linearGradient id="lowerOrangeGrad" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#ea580c" />
@@ -128,8 +134,8 @@ const whatWeDo = [
         </linearGradient>
       </defs>
       <path d="M0,120V73.71c47.79-22.2,103.59-32.17,158-28,70.36,5.37,136.33,33.31,206.8,37.5C438.64,87.57,512.34,66.33,583,47.95c69.27-18,138.3-24.88,209.4-13.08,36.15,6,69.85,17.84,104.45,29.34C989.49,95,1113,134.29,1200,67.53V120Z" opacity=".25" fill="url(#lowerOrangeGrad)"></path>
-      <path d="M0,120V104.19C13,83.08,27.64,63.14,47.69,47.95,99.41,8.73,165,9,224.58,28.42c31.15,10.15,60.09,26.07,89.67,39.8,40.92,19,84.73,46,130.83,49.67,36.26,2.85,70.9-9.42,98.6-31.56,31.77-25.39,62.32-62,103.63-73,40.44-10.79,81.35,6.69,119.13,24.28s75.16,39,116.92,43.05c59.73,5.85,113.28-22.88,168.9-38.84,30.2-8.66,59-6.17,87.09,7.5,22.43,10.89,48,26.93,60.65,49.24V120Z" opacity=".5" fill="url(#lowerGrayGrad)"></path>
-      <path d="M0,120V114.37C149.93,61,314.09,48.68,475.83,77.43c43,7.64,84.23,20.12,127.61,26.46,59,8.63,112.48-12.24,165.56-35.4C827.93,42.78,886,24.76,951.2,30c86.53,7,172.46,45.71,248.8,84.81V120Z" fill="url(#lowerGrayGrad)"></path>
+      <path d="M0,120V104.19C13,83.08,27.64,63.14,47.69,47.95,99.41,8.73,165,9,224.58,28.42c31.15,10.15,60.09,26.07,89.67,39.8,40.92,19,84.73,46,130.83,49.67,36.26,2.85,70.9-9.42,98.6-31.56,31.77-25.39,62.32-62,103.63-73,40.44-10.79,81.35,6.69,119.13,24.28s75.16,39,116.92,43.05c59.73,5.85,113.28-22.88,168.9-38.84,30.2-8.66,59-6.17,87.09,7.5,22.43,10.89,48,26.93,60.65,49.24V120Z" opacity=".5" fill="url(#lowerBlueGrad)"></path>
+      <path d="M0,120V114.37C149.93,61,314.09,48.68,475.83,77.43c43,7.64,84.23,20.12,127.61,26.46,59,8.63,112.48-12.24,165.56-35.4C827.93,42.78,886,24.76,951.2,30c86.53,7,172.46,45.71,248.8,84.81V120Z" fill="url(#lowerBlueGrad)"></path>
     </svg>
   </div>
 </section>
