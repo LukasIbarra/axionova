@@ -12,45 +12,47 @@
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center space-x-10">
-        <a href="#inicio" class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+        <a href="/" class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
           Inicio
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
         </a>
 
         <!-- Dropdown -->
         <div class="relative group">
-          <button class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">
+          <!-- Ahora es <a> para navegar a /servicios -->
+          <a href="/servicios" class="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">
             <span>Servicios</span>
             <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
-          </button>
+          </a>
+
           <!-- Dropdown Menu -->
           <div class="absolute top-full left-0 mt-3 w-64 bg-white/95 backdrop-blur-md border border-gray-200/50 rounded-2xl p-3 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-            <a href="#extraccion" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300">
+            <a href="/servicios#extraccion" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300">
               <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
               <span>Extracción Inteligente</span>
             </a>
-            <a href="#seguridad" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300">
+            <a href="/servicios#seguridad" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300">
               <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               <span>Seguridad Total</span>
             </a>
-            <a href="#analisis" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300">
+            <a href="/servicios#analisis" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300">
               <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2z"/></svg>
               <span>Análisis de Datos</span>
             </a>
           </div>
         </div>
 
-        <a href="#tecnologia" class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+        <a href="/#tecnologia" class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
           Tecnología
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
         </a>
-        <a href="#empresa" class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+        <a href="/#empresa" class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
           Empresa
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
         </a>
-        <a href="#contacto" class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+        <a href="/#contacto" class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
           Contacto
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
         </a>

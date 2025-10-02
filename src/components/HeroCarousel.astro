@@ -19,17 +19,14 @@ export interface Props { heroSlides: Slide[]; }
 
 const { heroSlides } = Astro.props as Partial<Props>;
 
-// Default (fallback) slides locales
 const defaultSlides: Slide[] = [
   {
     id: 1,
     eyebrow: "Líder en Innovación Minera 2024",
-    eyebrowClass:
-      "text-emerald-400 font-medium bg-emerald-500/10 border border-emerald-500/20 animate-fade-in",
+    eyebrowClass: "text-emerald-400 font-medium bg-emerald-500/10 border border-emerald-500/20",
     title1: "El futuro de la",
     title2: "minería es HOY",
-    desc:
-      "Revolucionamos la industria con tecnologia de vanguardia que maximiza la eficiencia, garantía la seguridad y protege el medio ambiente.",
+    desc: "Revolucionamos la industria con tecnología de vanguardia que maximiza la eficiencia, garantiza la seguridad y protege el medio ambiente.",
     img: "./servi4.jpg",
     ctaText: "Cotizar",
     ctaHref: "#contacto",
@@ -38,40 +35,35 @@ const defaultSlides: Slide[] = [
   {
     id: 2,
     eyebrow: "Líderes de la industria",
-    eyebrowClass:
-      "text-orange-400 font-medium bg-orange-500/10 border border-orange-500/20 animate-fade-in",
+    eyebrowClass: "text-orange-400 font-medium bg-orange-500/10 border border-orange-500/20",
     title1: "Resultados que",
     title2: "hablan por sí mismos",
-    desc:
-      "Más de 15 años liderando la transformación digital de la minería con resultados comprobados y reconocimiento mundial.",
+    desc: "Más de 15 años liderando la transformación digital de la minería con resultados comprobados y reconocimiento mundial.",
     img: "./conte.jpg",
     ctaText: "Solicitar Consultoría",
-    ctaHref: "#consulta",
+    ctaHref: "#contacto",
     align: "left",
     metrics: [
-      { value: "300%",  label: "Aumento Eficiencia",  color: "bg-orange-500/20", icon: "fa-solid fa-arrow-trend-up" },
-      { value: "99.9%", label: "Índice Seguridad",    color: "bg-emerald-500/20", icon: "fa-solid fa-shield-halved" },
-      { value: "50+",   label: "Proyectos Exitosos",  color: "bg-blue-500/20",    icon: "fa-solid fa-diagram-project" },
-      { value: "12",    label: "Países Activos",      color: "bg-emerald-500/20", icon: "fa-solid fa-earth-americas" },
+      { value: "300%", label: "Aumento Eficiencia", color: "bg-orange-500/20", icon: "fa-solid fa-arrow-trend-up" },
+      { value: "99.9%", label: "Índice Seguridad", color: "bg-emerald-500/20", icon: "fa-solid fa-shield-halved" },
+      { value: "50+", label: "Proyectos Exitosos", color: "bg-blue-500/20", icon: "fa-solid fa-diagram-project" },
+      { value: "12", label: "Países Activos", color: "bg-emerald-500/20", icon: "fa-solid fa-earth-americas" },
     ],
   },
   {
     id: 3,
     eyebrow: "Consultoría Gratuita",
-    eyebrowClass:
-      "text-emerald-400 font-medium bg-emerald-500/10 border border-emerald-500/20 animate-fade-in",
+    eyebrowClass: "text-emerald-400 font-medium bg-emerald-500/10 border border-emerald-500/20",
     title1: "¿Listo para",
     title2: "Transformar tu Operación?",
-    desc:
-      "Obtén una consultoría gratuita y descubre cómo nuestras soluciones pueden revolucionar tu empresa minera.",
+    desc: "Obtén una consultoría gratuita y descubre cómo nuestras soluciones pueden revolucionar tu empresa minera.",
     img: "./conte4.jpg",
-    ctaText: "Solicitar Consultoría",
-    ctaHref: "#consulta",
+    ctaText: "Contactar",
+    ctaHref: "#contacto",
     align: "right",
   },
 ];
 
-// Slides efectivos (props o fallback)
 const slides: Slide[] = (heroSlides && heroSlides.length ? heroSlides : defaultSlides);
 ---
 
@@ -81,112 +73,227 @@ const slides: Slide[] = (heroSlides && heroSlides.length ? heroSlides : defaultS
   style="height: 100vh"
   aria-label="Carrusel principal"
 >
-  <!-- Embla wrapper -->
-  <div class="embla h-full">
-    <div class="embla__viewport h-full overflow-hidden">
-      <div class="embla__container h-full flex">
-        {slides.map((s, i) => (
-          <article
-            class={`embla__slide relative shrink-0 grow-0 basis-full h-full hero-slide transition-opacity duration-700 ease-in-out ${i === 0 ? "is-active" : ""}`}
-            data-index={i}
-            role="group"
-            aria-roledescription="slide"
-            aria-label={`${i + 1} de ${slides.length}`}
-          >
-            <!-- Imagen de fondo y overlay (no bloquean clics) -->
-            <img
-              src={s.img}
-              alt={s.title1 + " " + s.title2}
-              class="pointer-events-none absolute inset-0 w-full h-full object-cover"
-              loading={i === 0 ? "eager" : "lazy"}
-            />
-            <div class="pointer-events-none absolute inset-0 bg-black/60"></div>
+  <!-- Contenedor de slides -->
+  <div class="hero-slides-container h-full relative">
+    {slides.map((s, i) => (
+      <article
+        class={`hero-slide absolute inset-0 w-full h-full transition-all duration-1000 ease-out ${i === 0 ? 'is-active opacity-100 z-10' : 'opacity-0 z-0'}`}
+        data-slide-index={i}
+        role="group"
+        aria-roledescription="slide"
+        aria-label={`${i + 1} de ${slides.length}`}
+      >
+        <!-- Imagen con overlay oscuro -->
+        <div class="absolute inset-0 overflow-hidden">
+          <img
+            src={s.img}
+            alt={s.title1 + " " + s.title2}
+            class="w-full h-full object-cover scale-110 transition-transform duration-[12000ms] ease-out"
+            loading={i === 0 ? "eager" : "lazy"}
+            decoding="async"
+            fetchpriority={i === 0 ? "high" : "auto"}
+            sizes="100vw"
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/70"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30"></div>
+        </div>
 
-            {(() => {
-              const isLeft  = s.align === "left";
-              const isRight = s.align === "right";
-              const padEdge = isLeft ? "lg:pl-28" : isRight ? "lg:pr-28" : "";
+        <!-- Contenido del slide -->
+        {(() => {
+          const isLeft = s.align === "left";
+          const isRight = s.align === "right";
+          const padEdge = isLeft ? "lg:pl-28" : isRight ? "lg:pr-28" : "";
 
-              return (
-                <div class={`relative z-20 flex h-full items-center justify-center px-8 md:px-16 lg:px-24 ${padEdge}`}>
-                  <div class={`flex w-full items-center gap-8 lg:gap-12
-                                ${isLeft ? "lg:justify-start" : isRight ? "lg:justify-end" : "lg:justify-center"}`}>
+          // Slide 3 con formulario a la izquierda
+          if (s.id === 3) {
+            return (
+              <div class={`relative z-20 flex h-full items-center justify-center px-8 md:px-16 lg:px-24 ${padEdge}`}>
+                {/* ⬇️ 2 columnas en desktop */}
+                <div class="w-full lg:flex lg:items-center lg:gap-6">
+                  
+                  {/* Izquierda: mitad y la caja centrada */}
+                  <div class="hidden lg:flex lg:w-1/2 justify-center">
+                    <aside class="hero-contact-form w-full max-w-md">
+                      <form class="space-y-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-2xl">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div class="form-group">
+                            <input type="text" placeholder="Nombre"
+                              class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/50 transition-all duration-300"
+                              required />
+                          </div>
+                          <div class="form-group">
+                            <input type="email" placeholder="Email"
+                              class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/50 transition-all duration-300"
+                              required />
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <input type="tel" placeholder="Teléfono"
+                            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/50 transition-all duration-300"
+                            required />
+                        </div>
+                        <button type="submit"
+                          class="w-full btn-premium-orange text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center gap-2 group">
+                          <span>Solicitar Consultoría Gratuita</span>
+                          <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                          </svg>
+                        </button>
+                        <p class="text-xs text-white/70 text-center">
+                          <i class="fa-solid fa-lock mr-1"></i> Tus datos están protegidos. Respuesta en menos de 24 horas.
+                        </p>
+                      </form>
+                    </aside>
+                  </div>
 
-                    {/* Bloque de texto */}
-                    <div
-                      class={`max-w-3xl text-white space-y-6 mx-auto text-center ${isLeft ? "lg:text-left lg:mx-0" : ""} ${isRight ? "lg:text-right lg:mx-0" : ""}`}
-                      data-anim={`${s.align === "center" ? "animate-fade-in-up" : s.align === "left" ? "animate-slide-in-left" : "animate-slide-in-right"}`}
-                    >
+                  {/* Derecha: mitad con el texto */}
+                  <div class="w-full lg:w-1/2 max-w-3xl text-white space-y-6 mx-auto text-center lg:text-left lg:mx-0">
+                    {s.eyebrow && (
+                      <span class={`hero-eyebrow inline-block px-4 py-2 rounded-full text-sm ${s.eyebrowClass ?? ""}`}>
+                        {s.eyebrow}
+                      </span>
+                    )}
+                    <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                      {s.title1}{" "}
+                      <span class="bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
+                        {s.title2}
+                      </span>
+                    </h1>
+                    <p class="hero-desc text-lg sm:text-xl text-white/90">{s.desc}</p>
+
+                    {/* Si usas CTAs solo móvil, mantenlas aquí */}
+                    <div class="hero-cta flex flex-wrap gap-4 justify-center lg:hidden">
+                      <a href={s.ctaHref ?? "#"} class="btn-premium btn-premium-orange transition-smooth shadow-premium shadow-premium-hover">
+                        {s.ctaText ?? "Contactar"}
+                      </a>
+                      <a href="/servicios" class="btn-premium btn-premium-white transition-smooth shadow-premium shadow-premium-hover">
+                        Explorar Servicios
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          // 👉 Slide 2: texto centrado en mitad izquierda (alineado a la izquierda) y métricas centradas en mitad derecha
+          if (s.id === 2) {
+            return (
+              <div class={`relative z-20 flex h-full items-center justify-center px-8 md:px-16 lg:px-24 ${padEdge}`}>
+                <div class="w-full items-center lg:grid lg:grid-cols-2 gap-8 lg:gap-12">
+                  
+                  {/* Izquierda: contenedor centrado; texto alineado a la izquierda */}
+                  <div class="flex items-center justify-center">
+                    <div class="max-w-3xl w-full text-white space-y-6 mx-auto lg:mx-0 text-left">
                       {s.eyebrow && (
-                        <span
-                          class={`inline-block px-4 py-2 rounded-full text-sm ${s.eyebrowClass ?? ""}`}
-                          data-anim="animate-fade-in"
-                        >
+                        <span class={`hero-eyebrow inline-block px-4 py-2 rounded-full text-sm ${s.eyebrowClass ?? ""}`}>
                           {s.eyebrow}
                         </span>
                       )}
-
-                      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight" data-anim="animate-fade-in-up">
+                      <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
                         {s.title1}{" "}
                         <span class="bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
                           {s.title2}
                         </span>
                       </h1>
+                      <p class="hero-desc text-lg sm:text-xl text-white/90">{s.desc}</p>
 
-                      <p class="text-lg sm:text-xl text-white/90" data-anim="animate-fade-in-up">{s.desc}</p>
-
-                      <div
-                        class={`flex flex-wrap gap-4 justify-center ${isLeft ? "lg:justify-start" : ""} ${isRight ? "lg:justify-end" : ""}`}
-                        data-anim="animate-fade-in-up"
-                      >
-                        {s.ctaText && (
-                          <>
-                            <a href={s.ctaHref ?? "#"} class="btn-premium btn-premium-orange transition-smooth shadow-premium shadow-premium-hover">
-                              {s.ctaText}
-                            </a>
-                            <a href="#servicios" class="btn-premium btn-premium-white transition-smooth shadow-premium shadow-premium-hover">
-                              Explorar Servicios
-                            </a>
-                          </>
-                        )}
-                      </div>
+                      {s.ctaText && (
+                        <div class="hero-cta flex flex-wrap gap-4 justify-start">
+                          <a href={s.ctaHref ?? "#"} class="btn-premium btn-premium-orange transition-smooth shadow-premium shadow-premium-hover">
+                            {s.ctaText}
+                          </a>
+                          <a href="/servicios" class="btn-premium btn-premium-white transition-smooth shadow-premium shadow-premium-hover">
+                            Explorar Servicios
+                          </a>
+                        </div>
+                      )}
                     </div>
+                  </div>
 
-                    {/* Panel de métricas (solo slide 2) */}
-                    {s.metrics && (
-                      <aside class="hidden md:block" data-anim="animate-slide-in-right">
-                        <div class="grid grid-cols-2 gap-3 lg:gap-4 w-[min(36rem,40vw)]">
-                          {s.metrics.map((m) => (
-                            <div class="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md px-4 py-3 lg:px-5 lg:py-4 text-white shadow-md">
-                              <div class="flex items-center gap-3">
-                                <span class={`inline-flex h-9 w-9 items-center justify-center rounded-md ${m.color ?? "bg-white/10"}`}>
-                                  <i class={`${m.icon ?? "fa-solid fa-circle"}`}></i>
-                                </span>
-                                <div>
-                                  <div class="text-2xl lg:text-3xl font-extrabold leading-none">{m.value}</div>
-                                  <div class="text-xs lg:text-sm text-white/80">{m.label}</div>
-                                </div>
+                  {/* Derecha: métricas centradas en su mitad */}
+                  {s.metrics && (
+                    <aside class="hero-metrics hidden md:flex items-center justify-center">
+                      <div class="grid grid-cols-2 gap-3 lg:gap-4 w-[min(36rem,40vw)]">
+                        {s.metrics.map((m, idx) => (
+                          <div
+                            class="metric-card rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md px-4 py-3 lg:px-5 lg:py-4 text-white shadow-md"
+                            style={`animation-delay: ${idx * 100}ms`}
+                          >
+                            <div class="flex items-center gap-3">
+                              <span class={`inline-flex h-9 w-9 items-center justify-center rounded-md ${m.color ?? "bg-white/10"}`}>
+                                <i class={`${m.icon ?? "fa-solid fa-circle"}`}></i>
+                              </span>
+                              <div>
+                                <div class="text-2xl lg:text-3xl font-extrabold leading-none">{m.value}</div>
+                                <div class="text-xs lg:text-sm text-white/80">{m.label}</div>
                               </div>
                             </div>
-                          ))}
-                        </div>
-                      </aside>
-                    )}
-
-                  </div>
+                          </div>
+                        ))}
+                      </div>
+                    </aside>
+                  )}
                 </div>
-              );
-            })()}
-          </article>
-        ))}
-      </div>
-    </div>
+              </div>
+            );
+          }
+
+          //  Slide 1 (u otros) normal
+          return (
+            <div class={`relative z-20 flex h-full items-center justify-center px-8 md:px-16 lg:px-24 ${padEdge}`}>
+              <div class={`flex w-full items-center gap-8 lg:gap-12
+               ${isLeft ? "lg:justify-start" : isRight ? "lg:justify-end" : "lg:justify-center"}`}>
+                <div class={`max-w-3xl text-white space-y-6 mx-auto text-center ${isLeft ? "lg:text-left lg:mx-0" : ""} ${isRight ? "lg:text-right lg:mx-0" : ""}`}>
+                  {s.eyebrow && (
+                    <span class={`hero-eyebrow inline-block px-4 py-2 rounded-full text-sm ${s.eyebrowClass ?? ""}`}>
+                      {s.eyebrow}
+                    </span>
+                  )}
+                  <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                    {s.title1}{" "}
+                    <span class="bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">{s.title2}</span>
+                  </h1>
+                  <p class="hero-desc text-lg sm:text-xl text-white/90">{s.desc}</p>
+                  {s.ctaText && (
+                    <div class={`hero-cta flex flex-wrap gap-4 justify-center ${isLeft ? "lg:justify-start" : ""} ${isRight ? "lg:justify-end" : ""}`}>
+                      <a href={s.ctaHref ?? "#"} class="btn-premium btn-premium-orange transition-smooth shadow-premium shadow-premium-hover">{s.ctaText}</a>
+                      <a href="/servicios" class="btn-premium btn-premium-white transition-smooth shadow-premium shadow-premium-hover">Explorar Servicios</a>
+                    </div>
+                  )}
+                </div>
+                {s.metrics && (
+                  <aside class="hero-metrics hidden md:block">
+                    <div class="grid grid-cols-2 gap-3 lg:gap-4 w-[min(36rem,40vw)]">
+                      {s.metrics.map((m, idx) => (
+                        <div class="metric-card rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md px-4 py-3 lg:px-5 lg:py-4 text-white shadow-md" style={`animation-delay: ${idx * 100}ms`}>
+                          <div class="flex items-center gap-3">
+                            <span class={`inline-flex h-9 w-9 items-center justify-center rounded-md ${m.color ?? "bg-white/10"}`}>
+                              <i class={`${m.icon ?? "fa-solid fa-circle"}`}></i>
+                            </span>
+                            <div>
+                              <div class="text-2xl lg:text-3xl font-extrabold leading-none">{m.value}</div>
+                              <div class="text-xs lg:text-sm text-white/80">{m.label}</div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </aside>
+                )}
+              </div>
+            </div>
+          );
+        })()}
+      </article>
+    ))}
   </div>
 
-  <!-- Controles -->
+  <!-- Controles de navegación -->
   <button
     id="prev-btn"
-    class="absolute left-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 bg-black/50 backdrop-blur-sm border border-gray-700 rounded-full flex items-center justify-center text-white hover:bg-black/70 hover:border-emerald-500 transition-all duration-300 group"
+    class="hidden md:flex absolute left-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 bg-black/50 backdrop-blur-sm border border-white/10 rounded-full items-center justify-center text-white hover:bg-black/70 hover:border-emerald-500 hover:scale-110 transition-all duration-300 group"
+    aria-label="Slide anterior"
   >
     <svg class="w-6 h-6 transition-colors group-hover:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -195,7 +302,8 @@ const slides: Slide[] = (heroSlides && heroSlides.length ? heroSlides : defaultS
 
   <button
     id="next-btn"
-    class="absolute right-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 bg-black/50 backdrop-blur-sm border border-gray-700 rounded-full flex items-center justify-center text-white hover:bg-black/70 hover:border-emerald-500 transition-all duration-300 group"
+    class="hidden md:flex absolute right-8 top-1/2 -translate-y-1/2 z-30 w-14 h-14 bg-black/50 backdrop-blur-sm border border-white/10 rounded-full items-center justify-center text-white hover:bg-black/70 hover:border-emerald-500 hover:scale-110 transition-all duration-300 group"
+    aria-label="Slide siguiente"
   >
     <svg class="w-6 h-6 transition-colors group-hover:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -203,243 +311,369 @@ const slides: Slide[] = (heroSlides && heroSlides.length ? heroSlides : defaultS
   </button>
 
   <!-- Indicadores -->
-  <div class="z-[99] absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+  <div class="z-40 absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-3">
     {slides.map((_, i) => (
       <button
         type="button"
-        class={`hero-indicator h-2 w-8 rounded-full transition ${i === 0 ? "bg-orange-500" : "bg-white/50 hover:bg-white"}`}
+        class={`hero-indicator h-2 rounded-full transition-all duration-300 ${i === 0 ? "w-12 bg-orange-500" : "w-8 bg-white/50 hover:bg-white/80"}`}
         data-goto={i}
         aria-label={`Ir al slide ${i + 1}`}
-        aria-selected={i === 0 ? "true" : "false"}
+        aria-current={i === 0 ? "true" : "false"}
       />
     ))}
   </div>
 
-  <!-- Progress Bar -->
-  <div class="absolute bottom-0 left-0 w-full h-1 bg-gray-800 z-[98]">
-    <div id="progress-bar" class="h-full w-0 bg-gradient-to-r from-orange-500 to-emerald-500"></div>
+  <!-- Barra de progreso -->
+  <div class="absolute bottom-0 left-0 w-full h-1 bg-black/50 z-30">
+    <div 
+      id="progress-bar" 
+      class="h-full bg-gradient-to-r from-orange-500 via-orange-400 to-emerald-500"
+      style="width: 0%; transform-origin: left center;"
+    ></div>
   </div>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/embla-carousel@8.1.6/embla.umd.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/embla-carousel-autoplay@8.1.6/embla-carousel-autoplay.umd.js" defer></script>
 </section>
+  
+
 
 <style>
-  .embla { position: relative; }
-  .embla__viewport { width: 100%; }
-  .embla__container { height: 100%; display: flex; will-change: transform; }
-  .embla__slide { height: 100%; flex: 0 0 100%; }
+  /* Animaciones para contenido del slide */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-  /* Solo el slide activo recibe eventos */
-  .hero-slide { opacity: 0; pointer-events: none; z-index: 10; }
-  .hero-slide.is-active { opacity: 1; pointer-events: auto; }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes metricPop {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  @keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+  .hero-slide.is-active .metric-card:hover {
+    border-color: rgba(16, 185, 129, 0.4);
+    background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+    transform: translateY(-4px) scale(1.02);
+    transition: all 0.3s ease;
+  }
+
+  .hero-slide.is-active .metric-card .text-3xl {
+    background: linear-gradient(
+      90deg,
+      #10b981 0%,
+      #f97316 25%,
+      #10b981 50%,
+      #f97316 75%,
+      #10b981 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: shimmer 12s linear infinite;
+  }
+
+  /* Slide activo: Ken Burns suave en la imagen */
+  .hero-slide.is-active img {
+    animation: kenBurns 12s ease-out forwards;
+  }
+
+  @keyframes kenBurns {
+    from { transform: scale(1.1); }
+    to { transform: scale(1); }
+  }
+
+  /* Animaciones de contenido cuando el slide está activo */
+  .hero-slide.is-active .hero-eyebrow {
+    animation: fadeIn 0.8s ease-out 0.2s backwards;
+  }
+
+  .hero-slide.is-active .hero-title {
+    animation: fadeInUp 1s ease-out 0.4s backwards;
+  }
+
+  .hero-slide.is-active .hero-desc {
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+  }
+
+  .hero-slide.is-active .hero-cta {
+    animation: fadeInUp 1s ease-out 0.8s backwards;
+  }
+
+  .hero-slide.is-active .hero-metrics {
+    animation: slideInRight 1s ease-out 0.5s backwards;
+  }
+
+  .hero-slide.is-active .metric-card {
+    animation: metricPop 0.6s ease-out backwards;
+  }
+
+  /* Efecto flotante sutil en los CTAs */
+  .hero-slide.is-active .hero-cta a {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .hero-slide.is-active .hero-cta a:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+
+  /* Transiciones suaves */
+  .hero-slide {
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+                z-index 0s 1s;
+  }
+
+  .hero-slide.is-active {
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+                z-index 0s 0s;
+  }
+
+  /* Indicadores mejorados */
+  .hero-indicator {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hero-indicator:hover {
+    transform: scale(1.1);
+  }
+
+  /* Reducir movimiento para accesibilidad */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slide,
+    .hero-slide img,
+    .hero-eyebrow,
+    .hero-title,
+    .hero-desc,
+    .hero-cta,
+    .hero-metrics,
+    .metric-card,
+    .hero-indicator {
+      animation: none !important;
+      transition: opacity 0.3s ease !important;
+    }
+  }
+  .hero-slide.is-active .hero-contact-form {
+  animation: fadeInUp 1s ease-out 0.8s backwards;
+}
+
+.hero-slide.is-active .form-group {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.hero-slide.is-active .form-group:nth-child(1) { animation-delay: 0.9s; }
+.hero-slide.is-active .form-group:nth-child(2) { animation-delay: 1s; }
+.hero-slide.is-active .form-group:nth-child(3) { animation-delay: 1.1s; }
+.hero-slide.is-active .form-group:nth-child(4) { animation-delay: 1.2s; }
+
+/* Efecto glassmorphism mejorado */
+.hero-contact-form form {
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.06) 100%);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.hero-contact-form input:focus,
+.hero-contact-form textarea:focus {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.hero-contact-form button:hover {
+  box-shadow: 0 20px 40px rgba(249,115,22,0.4), 0 10px 20px rgba(16,185,129,0.3);
+}
 </style>
 
-<script define:vars={{ slides: slides }}>
-  // ===== Config =====
-  let currentSlideIndex = 0;
-  let isAutoPlaying = true;
-  let autoPlayInterval = null;
-  let progressBar = null;
-  const AUTOPLAY_MS = 6000; // sincroniza barra de progreso y cambio de slide
+<script define:vars={{ totalSlides: slides.length }}>
+  let currentIndex = 0;
+  let isTransitioning = false;
+  let autoplayTimer = null;
+  let progressTimer = null;
+  const AUTOPLAY_DURATION = 6000;
 
-  // Reinicia animaciones en elementos con data-anim
-  function restartAnimations(rootEl) {
-    const targets = rootEl.querySelectorAll('[data-anim]');
-    targets.forEach((el) => {
-      const anim = el.getAttribute('data-anim');
-      if (!anim) return;
-      // quitar animaciones previas
-      anim.split(' ').forEach((c) => el.classList.remove(c));
-      // reset visual para que el inicio sea notorio
-      el.classList.add('opacity-0');
-      // forzar reflow
-      void el.offsetWidth;
-      // re-aplicar animación
-      el.classList.remove('opacity-0');
-      anim.split(' ').forEach((c) => el.classList.add(c));
+  function updateSlides(nextIndex) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+
+    const slides = document.querySelectorAll('.hero-slide');
+    const indicators = document.querySelectorAll('.hero-indicator');
+    
+    // Ocultar slide actual
+    slides[currentIndex]?.classList.remove('is-active', 'opacity-100', 'z-10');
+    slides[currentIndex]?.classList.add('opacity-0', 'z-0');
+    
+    // Mostrar nuevo slide
+    slides[nextIndex]?.classList.add('is-active', 'opacity-100', 'z-10');
+    slides[nextIndex]?.classList.remove('opacity-0', 'z-0');
+    
+    // Actualizar indicadores
+    indicators.forEach((indicator, idx) => {
+      const isActive = idx === nextIndex;
+      indicator.classList.toggle('w-12', isActive);
+      indicator.classList.toggle('bg-orange-500', isActive);
+      indicator.classList.toggle('w-8', !isActive);
+      indicator.classList.toggle('bg-white/50', !isActive);
+      indicator.setAttribute('aria-current', isActive ? 'true' : 'false');
     });
+    
+    currentIndex = nextIndex;
+    
+    setTimeout(() => {
+      isTransitioning = false;
+    }, 1000);
+    
+    animateProgressBar();
   }
 
-  // Indicadores (dots)
-  function updateIndicators() {
-    const dots = document.querySelectorAll('.hero-indicator');
-    dots.forEach((dot, idx) => {
-      if (!(dot instanceof HTMLElement)) return;
-      const isActive = idx === currentSlideIndex;
-      dot.classList.toggle('bg-orange-500', isActive);
-      dot.classList.toggle('bg-white/50', !isActive);
-      dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
-    });
-  }
-
-  // Pinta el slide actual (mueve el track, anima contenido y barra)
-  function updateSlide() {
-    const root = document.getElementById('hero');
-    if (!root) return;
-
-    // 1) mover el contenedor para mostrar el índice actual
-    const track = root.querySelector('.embla__container');
-    if (track instanceof HTMLElement) {
-      track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
-    }
-
-    // 2) estado de cada slide + (re)animaciones
-    const slideEls = root.querySelectorAll('.embla__slide');
-    slideEls.forEach((slideEl, idx) => {
-      if (!(slideEl instanceof HTMLElement)) return;
-      const isActive = idx === currentSlideIndex;
-
-      slideEl.classList.toggle('is-active', isActive);
-
-      // fondo del slide (img)
-      const bg = slideEl.querySelector('img');
-      if (bg instanceof HTMLElement) {
-        bg.style.opacity = isActive ? '1' : '0';
-        bg.style.transform = isActive ? 'scale(1)' : 'scale(1.05)';
-        bg.style.transition = 'opacity 600ms ease, transform 1200ms ease';
-      }
-
-      // limpiar animaciones de inactivos y re-disparar en activo
-      const animTargets = slideEl.querySelectorAll('[data-anim]');
-      animTargets.forEach((el) => {
-        const anim = el.getAttribute('data-anim') || '';
-        if (!anim) return;
-        if (!isActive) {
-          anim.split(' ').forEach((c) => el.classList.remove(c));
-          el.classList.add('opacity-0');
-        }
-      });
-      if (isActive) restartAnimations(slideEl);
-    });
-
-    // 3) indicadores
-    updateIndicators();
-
-    // 4) barra de progreso sincronizada
-    if (progressBar instanceof HTMLElement) {
-      progressBar.style.transition = `width ${AUTOPLAY_MS}ms linear`;
-      progressBar.style.width = '0%';
-      if (isAutoPlaying) {
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            progressBar.style.width = '100%';
-          });
-        });
-      }
-    }
-  }
-
-  // Navegación
   function nextSlide() {
-    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-    updateSlide();
-    isAutoPlaying = false;
+    const nextIndex = (currentIndex + 1) % totalSlides;
+    updateSlides(nextIndex);
   }
+
   function prevSlide() {
-    currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-    updateSlide();
-    isAutoPlaying = false;
+    const nextIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlides(nextIndex);
   }
+
   function goToSlide(index) {
-    currentSlideIndex = index;
-    updateSlide();
-    isAutoPlaying = false;
+    if (index !== currentIndex) {
+      updateSlides(index);
+    }
   }
 
-  // Autoplay
-  function startAutoPlay() {
-    if (autoPlayInterval) clearInterval(autoPlayInterval);
-    autoPlayInterval = setInterval(() => {
-      if (isAutoPlaying) {
-        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-        updateSlide();
-      }
-    }, AUTOPLAY_MS);
+  function animateProgressBar() {
+    const progressBar = document.getElementById('progress-bar');
+    if (!progressBar) return;
+    
+    // Resetear barra
+    progressBar.style.transition = 'none';
+    progressBar.style.width = '0%';
+    
+    // Forzar reflow
+    void progressBar.offsetWidth;
+    
+    // Animar
+    progressBar.style.transition = `width ${AUTOPLAY_DURATION}ms linear`;
+    progressBar.style.width = '100%';
   }
-  function stopAutoPlay() {
-    isAutoPlaying = false;
-    if (autoPlayInterval) {
-      clearInterval(autoPlayInterval);
-      autoPlayInterval = null;
+
+  function startAutoplay() {
+    stopAutoplay();
+    animateProgressBar();
+    
+    autoplayTimer = setInterval(() => {
+      nextSlide();
+    }, AUTOPLAY_DURATION);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
     }
-    // congelar barra donde esté
-    if (progressBar instanceof HTMLElement) {
-      const w = getComputedStyle(progressBar).width;
+    
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+      const currentWidth = progressBar.getBoundingClientRect().width;
       progressBar.style.transition = 'none';
-      progressBar.style.width = w;
-      void progressBar.offsetWidth; // reflow
+      progressBar.style.width = `${currentWidth}px`;
     }
   }
 
-  // Init
+  // Inicializar
   document.addEventListener('DOMContentLoaded', () => {
-    const root = document.getElementById('hero');
-    if (!root) return;
-
-    // transición del track (suave)
-    const track = root.querySelector('.embla__container');
-    if (track instanceof HTMLElement) {
-      track.style.transition = 'transform 600ms ease';
-    }
-
-    progressBar = document.getElementById('progress-bar');
-
-    // Botones personalizados
+    const hero = document.getElementById('hero');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
-    if (prevBtn) {
-      prevBtn.setAttribute('type', 'button');
-      prevBtn.addEventListener('click', (e) => {
-        e.preventDefault(); e.stopPropagation(); prevSlide();
-      });
-    }
-    if (nextBtn) {
-      nextBtn.setAttribute('type', 'button');
-      nextBtn.addEventListener('click', (e) => {
-        e.preventDefault(); e.stopPropagation(); nextSlide();
-      });
-    }
+    const indicators = document.querySelectorAll('.hero-indicator');
 
-    // Indicadores (pueden traer data-goto; si no, usamos el índice)
-    const dots = root.querySelectorAll('.hero-indicator');
-    dots.forEach((btn, idx) => {
-      if (!(btn instanceof HTMLElement)) return;
-      btn.setAttribute('type', 'button');
-      btn.addEventListener('click', (e) => {
-        e.preventDefault(); e.stopPropagation();
-        const raw = btn.dataset ? btn.dataset.goto : undefined;
-        const target = raw != null ? parseInt(raw, 10) : idx;
-        goToSlide(Number.isFinite(target) ? target : idx);
+    // Botones de navegación
+    prevBtn?.addEventListener('click', () => {
+      prevSlide();
+      stopAutoplay();
+      setTimeout(startAutoplay, 100);
+    });
+
+    nextBtn?.addEventListener('click', () => {
+      nextSlide();
+      stopAutoplay();
+      setTimeout(startAutoplay, 100);
+    });
+
+    // Indicadores
+    indicators.forEach((indicator) => {
+      indicator.addEventListener('click', (e) => {
+        const index = parseInt(e.currentTarget.dataset.goto);
+        if (!isNaN(index)) {
+          goToSlide(index);
+          stopAutoplay();
+          setTimeout(startAutoplay, 100);
+        }
       });
     });
 
-    // Primera pintura + autoplay
-    updateSlide();
-    startAutoPlay();
-
-    // Pausa/retoma por hover en todo el hero
-    root.addEventListener('mouseenter', stopAutoPlay);
-    root.addEventListener('mouseleave', () => {
-      isAutoPlaying = true;
-      if (progressBar instanceof HTMLElement) {
-        progressBar.style.transition = `width ${AUTOPLAY_MS}ms linear`;
-        progressBar.style.width = '0%';
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            progressBar.style.width = '100%';
-          });
-        });
-      }
-      startAutoPlay();
-    });
+    // Pausar en hover
+    hero?.addEventListener('mouseenter', stopAutoplay);
+    hero?.addEventListener('mouseleave', startAutoplay);
 
     // Teclado
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') { e.preventDefault(); nextSlide(); }
-      if (e.key === 'ArrowLeft')  { e.preventDefault(); prevSlide(); }
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextSlide();
+        stopAutoplay();
+        setTimeout(startAutoplay, 100);
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+        stopAutoplay();
+        setTimeout(startAutoplay, 100);
+      }
     });
+
+    // Iniciar autoplay
+    startAutoplay();
   });
 </script>
-
