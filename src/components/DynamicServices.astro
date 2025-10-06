@@ -11,7 +11,13 @@ const services = [
     benefits: "Mejora en eficiencia operativa del 40% y reducción de costos del 25%",
     gradient: "from-blue-500/20 to-blue-600/20",
     borderColor: "border-blue-500/30",
-    accentColor: "text-blue-400"
+    accentColor: "text-blue-400",
+    metrics: [
+      { value: "+40%", label: "Eficiencia operativa" },
+      { value: "-25%", label: "Costos directos" },
+      { value: "3–6m", label: "Payback estimado" },
+      { value: "↑15%", label: "OEE (planta)" },
+    ]
   },
   {
     id: 2,
@@ -23,7 +29,13 @@ const services = [
     benefits: "Aumento del 60% en eficiencia operativa y reducción del 35% en tiempos de respuesta",
     gradient: "from-blue-500/20 to-blue-600/20",
     borderColor: "border-blue-500/30",
-    accentColor: "text-blue-400"
+    accentColor: "text-blue-400",
+    metrics: [
+      { value: "60%", label: "Procesos digitalizados" },
+      { value: "-35%", label: "Tiempo de respuesta" },
+      { value: "99.5%", label: "Uptime plataformas" },
+      { value: "≤12 sem", label: "Go-live promedio" },
+    ]
   },
   {
     id: 3,
@@ -35,7 +47,13 @@ const services = [
     benefits: "Predicciones con 95% de precisión y decisiones 50% más rápidas",
     gradient: "from-blue-500/20 to-blue-600/20",
     borderColor: "border-blue-500/30",
-    accentColor: "text-blue-400"
+    accentColor: "text-blue-400",
+    metrics: [
+      { value: "95%", label: "Precisión predictiva" },
+      { value: "×2", label: "Velocidad de análisis" },
+      { value: "-20%", label: "Downtime no planificado" },
+      { value: "24/7", label: "Monitoreo en tiempo real" },
+    ]
   },
   {
     id: 4,
@@ -47,7 +65,13 @@ const services = [
     benefits: "Reducción del 50% en huella de carbono y cumplimiento 100% normativo",
     gradient: "from-blue-500/20 to-blue-600/20",
     borderColor: "border-blue-500/30",
-    accentColor: "text-blue-400"
+    accentColor: "text-blue-400",
+    metrics: [
+      { value: "-50%", label: "Huella de carbono (tCO₂e)" },
+      { value: "100%", label: "Cumplimiento normativo" },
+      { value: "-30%", label: "Consumo hídrico" },
+      { value: "ISO", label: "Alineación 14001/45001" },
+    ]
   },
   {
     id: 5,
@@ -59,7 +83,13 @@ const services = [
     benefits: "Reducción del 70% en incidentes y cumplimiento de estándares globales",
     gradient: "from-blue-500/20 to-blue-600/20",
     borderColor: "border-blue-500/30",
-    accentColor: "text-blue-400"
+    accentColor: "text-blue-400",
+    metrics: [
+      { value: "-70%", label: "Incidentes registrables" },
+      { value: "0", label: "Fatalidades" },
+      { value: "≥95%", label: "Cumplimiento HSE" },
+      { value: "24/7", label: "Vigilancia crítica" },
+    ]
   },
   {
     id: 6,
@@ -71,7 +101,13 @@ const services = [
     benefits: "Mejora del 80% en competencias del equipo y aumento del 30% en productividad",
     gradient: "from-blue-500/20 to-blue-600/20",
     borderColor: "border-blue-500/30",
-    accentColor: "text-blue-400"
+    accentColor: "text-blue-400",
+    metrics: [
+      { value: "+80%", label: "Competencias validadas" },
+      { value: "+30%", label: "Productividad de equipo" },
+      { value: "NPS 9.2", label: "Satisfacción capacitación" },
+      { value: "≤6 sem", label: "Tiempo a competencia" },
+    ]
   }
 ];
 ---
@@ -89,14 +125,14 @@ const services = [
   <div class="container mx-auto px-6 relative z-10">
     <!-- Header -->
     <div class="text-center mb-16 animate-fade-in">
-      <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-4">
+      <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-3 py-1 mb-4 text-sm">
         <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
         <span class="text-blue-400 font-medium">Servicios Integrales</span>
       </div>
 
-      <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4 md:mb-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
         Soluciones
         <br />
         <span class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
@@ -104,7 +140,7 @@ const services = [
         </span>
       </h2>
 
-      <p class="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
+      <p class="text-sm md:text-base text-gray-600 max-w-md mx-auto leading-relaxed">
         Transformamos la industria minera con un ecosistema completo de servicios
         que integran tecnología de vanguardia, seguridad total y sostenibilidad.
       </p>
@@ -123,7 +159,7 @@ const services = [
             <div class="glow-effect absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500"></div>
             <div class="relative z-10 flex items-start space-x-4">
               <div class="service-icon w-12 h-12 rounded-xl flex items-center justify-center text-gray-400 bg-gray-100 transition-all duration-300">
-                <span class="text-2xl">{service.icon}</span>
+                <span class="text-3xl">{service.icon}</span>
               </div>
               <div class="flex-1">
                 <h3 class="service-title font-semibold mb-2 text-gray-800 transition-colors duration-300">
@@ -151,10 +187,10 @@ const services = [
                 <div class="flex items-start justify-between mb-6 max-w-[920px] mx-auto w-full">
                   <div class="flex items-center gap-4">
                     <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-400 flex items-center justify-center text-white shrink-0">
-                      <span class="text-2xl">{service.icon}</span>
+                      <span class="text-3xl">{service.icon}</span>
                     </div>
                     <div>
-                      <h3 class="text-2xl font-bold text-gray-900 mb-1">{service.title}</h3>
+                      <h3 class="text-3xl font-bold text-gray-900 mb-1">{service.title}</h3>
                       <p class="text-blue-500/80">{service.shortDesc}</p>
                     </div>
                   </div>
@@ -172,7 +208,7 @@ const services = [
                   </p>
 
                   <!-- Features en 2 columnas coherentes -->
-                  <div class="mb-6">
+                  <div class="mb-6 py-4">
                     <h4 class="text-gray-900 font-semibold mb-3">Características Principales:</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
                       {service.features.map((feature) => (
@@ -187,13 +223,25 @@ const services = [
                   </div>
 
                   <!-- Benefits ancho completo -->
-                  <div class="bg-gradient-to-r from-blue-50 to-orange-50 border border-blue-200 rounded-xl p-4 mb-6">
+                  <div class="bg-gradient-to-r from-blue-50 to-orange-50 border border-blue-200 rounded-xl p-4 mb-6 py-4 text-center">
                     <h4 class="text-blue-600 font-semibold mb-2">Beneficios Comprobados:</h4>
                     <p class="text-gray-700 text-sm">{service.benefits}</p>
                   </div>
 
+                  {service.metrics && service.metrics.length ? (
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-2 mb-6">
+                      {service.metrics.map((m) => (
+                        <div class="text-center bg-white/70 border border-blue-100 rounded-xl py-4">
+                          <p class="text-2xl md:text-3xl font-extrabold text-blue-600">{m.value}</p>
+                          <p class="text-xs md:text-sm text-gray-600 mt-1">{m.label}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+
+
                   <!-- CTAs alineadas y con respiración -->
-                  <div class="flex flex-col sm:flex-row gap-4">
+                  <div class="flex flex-col sm:flex-row gap-4 py-4">
                     <a href="/contacto" class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-3 px-6 rounded-xl font-semibold text-center transition-all duration-300 flex-1">
                       Contactar ahora
                     </a>
@@ -265,7 +313,7 @@ const services = [
     <!-- Bottom CTA -->
     <div class="text-center animate-fade-in" style="animation-delay: 0.8s">
       <div class="bg-gradient-to-r from-blue-50 via-white to-orange-50 border border-blue-200 rounded-2xl p-8 shadow-lg">
-        <h3 class="text-2xl font-bold text-gray-900 mb-4">
+        <h3 class="text-3xl font-bold text-gray-900 mb-4">
           ¿Listo para Transformar tu Operación Minera?
         </h3>
         <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
@@ -299,7 +347,6 @@ const services = [
       function updateActiveService(serviceId: number): void {
         // Reset de la lista
         serviceItems.forEach((item) => {
-          // item puede ser Element; verificamos antes de usar .querySelector y .classList
           if (!(item instanceof HTMLElement)) return;
 
           const glow  = item.querySelector('.glow-effect');
@@ -468,7 +515,6 @@ const services = [
     if (typeof mql.addEventListener === 'function') {
       mql.addEventListener('change', (ev: MediaQueryListEvent) => handleMQ(ev));
     } else if (typeof mql.addListener === 'function') {
-      // Fallback para Safari viejito
       mql.addListener(handleMQ);
     }
     handleMQ(mql);
@@ -488,8 +534,8 @@ const services = [
 
   .service-item {
     background: #fff;
-    border: 1px solid rgba(229, 231, 235, 1); /* border-gray-200 */
-    border-radius: 1rem; /* rounded-2xl */
+    border: 1px solid rgba(229, 231, 235, 1);
+    border-radius: 1rem;
     transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
     position: relative;
     will-change: transform;
