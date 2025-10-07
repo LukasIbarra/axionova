@@ -10,46 +10,50 @@ interface Service {
   color: string;
   desc: string;
   bullets: string[];
+  id: string;
 }
 
 const services: Service[] = [
   {
-    title: "Extracción Inteligente",
-    slug: "extraccion-inteligente",
-    icon: "fa-solid fa-bolt",
+    id: "gestion-del-cambio",
+    title: "Gestión del Cambio",
+    slug: "gestion-del-cambio",
+    icon: "fa-solid fa-refresh",
     color: "text-blue-500",
     desc:
-      "Automatizamos y optimizamos la extracción con IA, sensores IoT y control en tiempo real para maximizar la producción y reducir costos.",
+      "Especializados en gestión del cambio, facilitamos la implementación efectiva de transformaciones organizacionales y operativas en entornos mineros, utilizando enfoques sociológicos y educacionales para minimizar resistencias y maximizar la adopción de nuevas prácticas.",
     bullets: [
-      "Optimización en tiempo real de equipos y rutas",
-      "Sensórica IoT y telemetría unificada",
-      "Planificación dinámica y mantenimiento predictivo",
+      "Análisis de impacto organizacional",
+      "Planes de comunicación y capacitación",
+      "Monitoreo de adopción y ajustes",
     ],
   },
   {
-    title: "Seguridad Total",
-    slug: "seguridad-total",
-    icon: "fa-solid fa-shield-halved",
+    id: "optimizacion-de-procesos",
+    title: "Optimización de Procesos",
+    slug: "optimizacion-de-procesos",
+    icon: "fa-solid fa-cogs",
     color: "text-blue-500",
     desc:
-      "Monitoreo inteligente de riesgos con visión computacional, alertas tempranas y cumplimiento normativo automatizado.",
+      "Aplicamos metodologías Lean Six Sigma para identificar y eliminar desperdicios, reducir variabilidad y optimizar procesos operativos en la minería, logrando mejoras significativas en eficiencia y calidad.",
     bullets: [
-      "Detección de EPP y zonas restringidas (visión computacional)",
-      "Alertas en segundos y bitácoras automáticas",
-      "Cumplimiento normativo y reportes auditables",
+      "Análisis DMAIC y mapeo de procesos",
+      "Eliminación de desperdicios y reducción de variabilidad",
+      "Control estadístico y mejora continua",
     ],
   },
   {
-    title: "Análisis de Datos",
-    slug: "analisis-de-datos",
-    icon: "fa-solid fa-chart-line",
+    id: "optimizacion-de-tiempos-y-recursos",
+    title: "Optimización de Tiempos y Recursos",
+    slug: "optimizacion-de-tiempos-y-recursos",
+    icon: "fa-solid fa-clock",
     color: "text-blue-500",
     desc:
-      "Analítica avanzada para decidir con datos: tableros en vivo, modelos predictivos e integración con ERP/SCADA.",
+      "Desarrollamos estrategias para optimizar el uso de tiempos y recursos en operaciones mineras, implementando técnicas de planificación avanzada, gestión de inventarios y asignación óptima de personal y equipos.",
     bullets: [
-      "Cuadros de mando en tiempo real",
-      "Modelos de pronóstico y simulación",
-      "Integración con ERP/SCADA y data lakes",
+      "Planificación avanzada y gestión de inventarios",
+      "Asignación óptima de recursos humanos y equipos",
+      "Monitoreo en tiempo real y ajustes dinámicos",
     ],
   },
 ];
@@ -145,7 +149,7 @@ const services: Service[] = [
             <i class="fa-solid fa-diagram-project text-blue-600"></i>
             <h3 class="font-bold">2. Piloto y ROI</h3>
           </div>
-          <p class="mt-2 text-slate-600">MVP medible en semanas con metas de impacto claras.</p>
+          <p class="mt-2 text-slate-600">Proyectos piloto medibles en semanas con metas de impacto claras.</p>
         </div>
         <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <div class="flex items-center gap-3">
