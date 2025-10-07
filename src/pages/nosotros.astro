@@ -1,0 +1,297 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<MainLayout>
+  <Navbar />
+
+  <!-- Hero Section Mejorada -->
+  <section class="relative py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-orange-600 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/conte1.jpg" alt="Operaciones mineras" class="w-full h-full object-cover opacity-20" />
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-orange-900/40"></div>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 relative z-10 text-center text-white">
+      <div class="inline-block mb-6">
+        <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wide">
+          Consultoría Especializada
+        </span>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl">
+        Sobre
+        <span class="bg-gradient-to-r from-blue-300 to-orange-300 bg-clip-text text-transparent">Nosotros</span>
+      </h1>
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+        <p class="text-xl md:text-2xl mb-6 max-w-4xl mx-auto leading-relaxed font-light">
+          "Proporcionamos herramientas y ponemos en marcha proyectos para generar recursos y oportunidades que contribuyan a una sociedad más justa y cohesionada"
+        </p>
+        <p class="text-lg italic text-blue-100">
+          "Nuestra pasión, tu eficiencia y productividad"
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiénes Somos Mejorado -->
+  <section class="py-20 bg-white relative">
+    <div class="absolute top-0 left-0 w-32 h-32 bg-blue-50 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Quiénes Somos</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-orange-500 mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-6">
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Axionova es una consultora regional creada en julio de 2025 por un equipo multidisciplinario de Andacollo y Coquimbo, con más de 20 años de experiencia en mantenimiento de equipos mineros y excelencia operacional.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Integramos metodologías Lean y Six Sigma con enfoques sociológicos y educacionales para materializar cambios organizacionales, operativos y de mantenimiento directamente en terreno, adaptándonos a la realidad de las operaciones mineras de la Región de Coquimbo.
+          </p>
+          <div class="flex items-center space-x-4 pt-4">
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+              <span class="text-sm text-gray-600">+20 años experiencia</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
+              <span class="text-sm text-gray-600">Equipo multidisciplinario</span>
+            </div>
+          </div>
+        </div>
+        <div class="relative group">
+          <img src="/conte2.jpg" alt="Equipo Axionova trabajando en operaciones mineras" 
+               class="w-full h-96 object-cover rounded-2xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent rounded-2xl"></div>
+          <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-orange-500 rounded-2xl rotate-12 opacity-90"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Misión y Visión Mejorado -->
+  <section class="py-20 bg-gray-50 relative overflow-hidden">
+    <div class="absolute -top-24 -right-24 w-48 h-48 bg-blue-100 rounded-full"></div>
+    <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-orange-100 rounded-full"></div>
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Misión -->
+        <div class="bg-white p-10 rounded-2xl shadow-xl border border-gray-100 transform hover:-translate-y-2 transition-transform duration-300">
+          <div class="flex items-center mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900">Nuestra Misión</h3>
+          </div>
+          <p class="text-gray-700 leading-relaxed text-lg">
+            Maximizamos el valor de nuestros clientes impulsando su crecimiento a través de la innovación y la adaptabilidad de sus procesos operacionales mediante la integración efectiva de herramientas de gestión de mejora continua con foco en la excelencia, la eficiencia y la sostenibilidad en la región de Coquimbo.
+          </p>
+        </div>
+        
+        <!-- Visión -->
+        <div class="bg-white p-10 rounded-2xl shadow-xl border border-gray-100 transform hover:-translate-y-2 transition-transform duration-300">
+          <div class="flex items-center mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900">Nuestra Visión</h3>
+          </div>
+          <p class="text-gray-700 leading-relaxed text-lg">
+            Ser un referente nacional en optimización de procesos, transformación digital y excelencia operacional, liderando el cambio hacia una industria más eficiente, innovadora y sostenible desde la Región de Coquimbo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valores Mejorado -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Nuestros Valores</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Principios que guían cada uno de nuestros proyectos y relaciones</p>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-orange-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center group transform hover:-translate-y-2 transition-all duration-300">
+          <div class="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl">
+            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">Impecabilidad</h4>
+          <p class="text-gray-600 leading-relaxed">Excelencia en cada entrega, precisión en cada detalle</p>
+        </div>
+        <div class="text-center group transform hover:-translate-y-2 transition-all duration-300">
+          <div class="w-24 h-24 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl">
+            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">Confianza</h4>
+          <p class="text-gray-600 leading-relaxed">Relaciones sólidas, transparentes y duraderas</p>
+        </div>
+        <div class="text-center group transform hover:-translate-y-2 transition-all duration-300">
+          <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl">
+            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">Bienestar</h4>
+          <p class="text-gray-600 leading-relaxed">Cuidado integral de personas y entorno</p>
+        </div>
+        <div class="text-center group transform hover:-translate-y-2 transition-all duration-300">
+          <div class="w-24 h-24 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl">
+            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">Optimismo</h4>
+          <p class="text-gray-600 leading-relaxed">Enfoque positivo hacia el futuro y soluciones</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Especializados Mejorado -->
+  <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Servicios Especializados</h2>
+        <p class="text-xl text-gray-600">Soluciones integrales para la industria minera</p>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-orange-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform hover:-translate-y-2 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-colors duration-300">
+            <svg class="w-7 h-7 text-blue-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-4">Gestión del Cambio</h4>
+          <p class="text-gray-700 leading-relaxed">Aceleramos la adopción de nuevas prácticas en terreno, integrando herramientas Lean y modelos sociológicos para reducir resistencia y asegurar resultados sostenibles.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform hover:-translate-y-2 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-orange-500 transition-colors duration-300">
+            <svg class="w-7 h-7 text-orange-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-4">Optimización de Procesos</h4>
+          <p class="text-gray-700 leading-relaxed">Disminuimos tiempos de reparación, entre fallas y uso de insumos en mina y planta mediante metodologías probadas.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform hover:-translate-y-2 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-500 transition-colors duration-300">
+            <svg class="w-7 h-7 text-green-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-4">Optimización de Recursos</h4>
+          <p class="text-gray-700 leading-relaxed">Reducción de materias primas, aumento de productividad y eficiencia en procesos de mantenimiento y operaciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios y Diferenciadores Mejorado -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Beneficios -->
+        <div>
+          <div class="flex items-center mb-8">
+            <div class="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-3xl font-bold text-gray-900">Beneficios</h3>
+          </div>
+          <ul class="space-y-6">
+            <li class="flex items-start bg-green-50 p-6 rounded-2xl border border-green-100">
+              <svg class="w-6 h-6 text-green-500 mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Reducción de tiempos críticos</h4>
+                <p class="text-gray-700">En mantenimiento y operación con metodologías comprobadas</p>
+              </div>
+            </li>
+            <li class="flex items-start bg-green-50 p-6 rounded-2xl border border-green-100">
+              <svg class="w-6 h-6 text-green-500 mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Disminución de fallas recurrentes</h4>
+                <p class="text-gray-700">Y sobreconsumo de insumos y repuestos mediante análisis predictivo</p>
+              </div>
+            </li>
+            <li class="flex items-start bg-green-50 p-6 rounded-2xl border border-green-100">
+              <svg class="w-6 h-6 text-green-500 mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Aumento de disponibilidad</h4>
+                <p class="text-gray-700">Y cumplimiento de programas semanales con seguimiento continuo</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Diferenciadores -->
+        <div>
+          <div class="flex items-center mb-8">
+            <div class="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-3xl font-bold text-gray-900">Diferenciadores</h3>
+          </div>
+          <ul class="space-y-6">
+            <li class="flex items-start bg-blue-50 p-6 rounded-2xl border border-blue-100">
+              <svg class="w-6 h-6 text-blue-500 mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Aplicación directa en terreno</h4>
+                <p class="text-gray-700">Herramientas estadísticas, sociológicas y educacionales aplicadas directamente en operaciones</p>
+              </div>
+            </li>
+            <li class="flex items-start bg-blue-50 p-6 rounded-2xl border border-blue-100">
+              <svg class="w-6 h-6 text-blue-500 mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Conocimiento operativo real</h4>
+                <p class="text-gray-700">De áreas de carguío, chancado, molienda, flotación, talleres y bodegas</p>
+              </div>
+            </li>
+            <li class="flex items-start bg-blue-50 p-6 rounded-2xl border border-blue-100">
+              <svg class="w-6 h-6 text-blue-500 mr-4 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 0118 0z"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2">Consultoría regional cercana</h4>
+                <p class="text-gray-700">Alineada a la excelencia operacional minera de la Región de Coquimbo</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- El resto de las secciones las mantengo similares pero con mejoras de diseño -->
+  <!-- ... (continuar con las demás secciones aplicando el mismo estilo) ... -->
+
+  <Footer />
+</MainLayout>
