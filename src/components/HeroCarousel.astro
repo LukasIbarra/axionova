@@ -15,9 +15,9 @@ interface Slide {
   icon?: string;
 }
 
-export interface Props { heroSlides: Slide[]; }
+export interface Props { heroSlides?: Slide[]; }
 
-const { heroSlides } = Astro.props as Partial<Props>;
+const { heroSlides } = Astro.props as Props;
 
 const defaultSlides: Slide[] = [
   {
@@ -64,7 +64,7 @@ const defaultSlides: Slide[] = [
   },
 ];
 
-const slides: Slide[] = (heroSlides && heroSlides.length ? heroSlides : defaultSlides);
+const slides: Slide[] = (heroSlides?.length ? heroSlides : defaultSlides);
 ---
 
 <section

@@ -1,467 +1,67 @@
----
-
----
-
-<section
-  id="nosotros"
-  class="py-20 bg-white relative overflow-hidden text-gray-900"
->
-  <!-- Background Pattern -->
-  <div class="aabsolute inset-0 opacity-5 pointer-events-none -z-10">
+<section class="py-20 bg-white text-gray-900 relative overflow-hidden">
+  <!-- Fondo sutil -->
+  <div class="absolute inset-0 opacity-5 pointer-events-none -z-10">
     <div
       class="absolute inset-0"
       style={{
         backgroundImage: `radial-gradient(circle at 20% 80%, #3b82f6 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, #f97316 0%, transparent 50%),
-                        radial-gradient(circle at 40% 40%, #3b82f6 0%, transparent 50%)`,
+                         radial-gradient(circle at 80% 20%, #f97316 0%, transparent 50%),
+                         radial-gradient(circle at 40% 40%, #3b82f6 0%, transparent 50%)`,
       }}
     >
     </div>
   </div>
 
-  <div class="max-w-6xl mx-auto px-6 relative z-10">
-    <!-- Header -->
-    <div class="text-center mb-16 animate-fade-in">
-      <div
-        class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-4"
-      >
-        <svg
-          class="w-4 h-4 text-blue-400"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-        <span class="text-blue-400 font-medium">Sobre Nosotros</span>
-      </div>
-
-      <h2
-        class="text-4xl md:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight"
-      >
-        Quiénes
-        <br />
-        <span
-          class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent"
-          >Somos</span
-        >
-      </h2>
-
-      <p
-        class="text-base md:text-xl text-gray-600 max-w-2xl md:max-w-3xl mx-auto leading-relaxed"
-      >
-        Axionova es una consultora regional creada en julio de 2025 por un
-        equipo multidisciplinario de Andacollo y Coquimbo, con más de 20 años de
-        experiencia en mantenimiento de equipos mineros y excelencia
-        operacional.
-      </p>
-      <br />
-      <p
-        class="text-base md:text-xl text-gray-600 max-w-2xl md:max-w-3xl mx-auto leading-relaxed mt-4"
-      >
-        Líderes en transformación digital de la minería, impulsando la
-        innovación, seguridad y sostenibilidad para un futuro más eficiente y
-        responsable.
-      </p>
-    </div>
-
-    <!-- Misión y Visión -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-16">
-      <!-- Misión -->
-      <div
-        class="group bg-gray-50/70 rounded-2xl p-7 md:p-8 border border-blue-500/20 shadow-md hover:shadow-lg transition-all animate-slide-in-right"
-      >
-        <div class="grid grid-rows-[auto,1fr,auto] gap-5 h-full">
-          <div
-            class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300"
-          >
-            <svg
-              class="w-10 h-10 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-          </div>
-          <h3
-            class="text-xl md:text-2xl font-bold text-center mb-3 text-gray-900"
-          >
-            Nuestra Misión
-          </h3>
-          <p class="text-gray-700 leading-relaxed text-sm md:text-base">
-            Maximizamos el valor de nuestros clientes impulsando su crecimiento
-            a través de la innovación y la adaptabilidad de sus procesos
-            operacionales mediante la integración efectiva de herramientas de
-            gestión de mejora continua con foco en la excelencia, la eficiencia
-            y la sostenibilidad en la región de Coquimbo.
-          </p>
-          <div class="mt-2 flex justify-center">
-            <div
-              class="w-12 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
-            >
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Visión -->
-      <div
-        class="group bg-gray-50/80 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/20 shadow-lg hover:border-orange-500/40 transition-all duration-500 animate-slide-in-right"
-      >
-        <div
-          class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300"
-        >
-          <svg
-            class="w-10 h-10 text-white"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-            ></path>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-bold text-center mb-4 text-gray-900">
-          Nuestra Visión
-        </h3>
-        <p class="text-gray-700 leading-relaxed">
-          Ser un referente a nivel nacional en optimización de procesos,
-          transformación digital y excelencia operacional, liderando el cambio
-          hacia una industria más eficiente, innovadora y sostenible desde la
-          región de Coquimbo.
-        </p>
-        <div class="mt-6 flex justify-center">
-          <div
-            class="w-12 h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full"
-          >
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Valores -->
-    <div class="text-center mb-16">
-      <h3 class="text-3xl font-bold mb-8 text-gray-900">Nuestros Valores</h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div
-          class="group bg-gray-50/80 backdrop-blur-sm rounded-xl p-6 border border-blue-500/20 shadow-lg hover:border-blue-500/40 transition-all duration-500 animate-fade-in-up"
-          style="animation-delay: 0.2s;"
-        >
-          <div
-            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h4 class="font-bold text-lg mb-2 text-gray-900">Impecabilidad</h4>
-          <p
-            class="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300"
-          >
-            Excelencia en cada entrega
-          </p>
-          <div
-            class="mt-4 w-8 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          >
-          </div>
-        </div>
-
-        <div
-          class="group bg-gray-50/80 backdrop-blur-sm rounded-xl p-6 border border-orange-500/20 shadow-lg hover:border-orange-500/40 transition-all duration-500 animate-fade-in-up"
-          style="animation-delay: 0.3s;"
-        >
-          <div
-            class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-              ></path>
-            </svg>
-          </div>
-          <h4 class="font-bold text-lg mb-2 text-gray-900">Confianza</h4>
-          <p
-            class="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300"
-          >
-            Relaciones sólidas y transparentes
-          </p>
-          <div
-            class="mt-4 w-8 h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          >
-          </div>
-        </div>
-
-        <div
-          class="group bg-gray-50/80 backdrop-blur-sm rounded-xl p-6 border border-blue-500/20 shadow-lg hover:border-blue-500/40 transition-all duration-500 animate-fade-in-up"
-          style="animation-delay: 0.4s;"
-        >
-          <div
-            class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-              ></path>
-            </svg>
-          </div>
-          <h4 class="font-bold text-lg mb-2 text-gray-900">Bienestar</h4>
-          <p
-            class="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300"
-          >
-            Cuidado de personas y entorno
-          </p>
-          <div
-            class="mt-4 w-8 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          >
-          </div>
-        </div>
-
-        <div
-          class="group bg-gray-50/80 backdrop-blur-sm rounded-xl p-6 border border-orange-500/20 shadow-lg hover:border-orange-500/40 transition-all duration-500 animate-fade-in-up"
-          style="animation-delay: 0.5s;"
-        >
-          <div
-            class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-          >
-            <svg
-              class="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-          </div>
-          <h4 class="font-bold text-lg mb-2 text-gray-900">Optimismo</h4>
-          <p
-            class="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300"
-          >
-            Enfoque positivo al futuro
-          </p>
-          <div
-            class="mt-4 w-8 h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          >
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Galería de Imágenes -->
-    <div class="text-center mb-16">
-      <h3 class="text-3xl font-bold mb-8 text-gray-900">
-        Nuestro Equipo en Acción
-      </h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div
-          class="group relative overflow-hidden rounded-2xl bg-gray-50/80 backdrop-blur-sm border border-blue-500/20 shadow-lg hover:border-blue-500/40 transition-all duration-500 animate-fade-in-up"
-          style="animation-delay: 0.2s;"
-        >
-          <div
-            class="aspect-video bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center"
-          >
-            <div class="text-center">
-              <svg
-                class="w-16 h-16 text-blue-400 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                ></path>
-              </svg>
-              <p class="text-gray-900 font-semibold">Faena Minera</p>
-              <p class="text-gray-600 text-sm">Operaciones en terreno</p>
-            </div>
-          </div>
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6"
-          >
-            <p class="text-white text-lg font-bold">Próximamente</p>
-          </div>
-        </div>
-
-        <div
-          class="group relative overflow-hidden rounded-2xl bg-gray-50/80 backdrop-blur-sm border border-orange-500/20 shadow-lg hover:border-orange-500/40 transition-all duration-500 animate-fade-in-up"
-          style="animation-delay: 0.3s;"
-        >
-          <div
-            class="aspect-video bg-gradient-to-br from-orange-500/20 to-orange-600/20 flex items-center justify-center"
-          >
-            <div class="text-center">
-              <svg
-                class="w-16 h-16 text-orange-400 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                ></path>
-              </svg>
-              <p class="text-gray-900 font-semibold">Reuniones</p>
-              <p class="text-gray-600 text-sm">Colaboración y planificación</p>
-            </div>
-          </div>
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6"
-          >
-            <p class="text-white text-lg font-bold">Próximamente</p>
-          </div>
-        </div>
-
-        <div
-          class="group relative overflow-hidden rounded-2xl bg-gray-50/80 backdrop-blur-sm border border-blue-500/20 shadow-lg hover:border-blue-500/40 transition-all duration-500 animate-fade-in-up"
-          style="animation-delay: 0.4s;"
-        >
-          <div
-            class="aspect-video bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center"
-          >
-            <div class="text-center">
-              <svg
-                class="w-16 h-16 text-blue-400 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              <p class="text-gray-900 font-semibold">Seguridad</p>
-              <p class="text-gray-600 text-sm">Compromiso con la protección</p>
-            </div>
-          </div>
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6"
-          >
-            <p class="text-white text-lg font-bold">Próximamente</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Frases de Impacto -->
+  <div class="max-w-5xl mx-auto text-center px-6 relative z-10">
     <div
-      class="bg-gray-50/80 backdrop-blur-sm rounded-2xl p-8 border border-blue-500/20 shadow-lg animate-fade-in-up"
-      style="animation-delay: 0.6s;"
+      class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-4"
     >
-      <h3 class="text-2xl font-bold text-center mb-6 text-gray-900">
-        Nuestro Compromiso
-      </h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="text-center group">
-          <div
-            class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-          >
-            <svg
-              class="w-8 h-8 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-          </div>
-          <p class="text-lg italic text-gray-700 mb-4">
-            "Proporcionamos herramientas y ponemos en marcha proyectos para
-            generar recursos y oportunidades que contribuyan a una sociedad más
-            justa y cohesionada"
-          </p>
-          <p class="text-sm text-blue-600 font-semibold">Axionova</p>
-        </div>
-        <div class="text-center group">
-          <div
-            class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-          >
-            <svg
-              class="w-8 h-8 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <p class="text-lg italic text-gray-700 mb-4">
-            "Adaptamos enfoques de mejora continua y disciplina estadística y
-            sus herramientas a las especificidades de los contextos nacionales"
-          </p>
-          <p class="text-sm text-orange-600 font-semibold">
-            Metodología Adaptada
-          </p>
-        </div>
-      </div>
-      <div class="text-center mt-8">
-        <p
-          class="text-xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent"
-        >
-          Axionova; agiliza tus procesos, maximiza tu éxito.
-        </p>
-      </div>
+      <svg
+        class="w-4 h-4 text-blue-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span class="text-blue-500 font-medium">Conócenos</span>
     </div>
+
+    <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+      Somos <span
+        class="bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent"
+        >Axionova</span
+      >
+    </h2>
+
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-10 leading-relaxed">
+      Consultora regional con más de 20 años de experiencia en mantenimiento y
+      mejora operativa para la industria minera. Combinamos metodologías Lean,
+      Six Sigma y enfoques sociológicos para lograr resultados sostenibles en
+      terreno.
+    </p>
+
+    <a
+      href="/nosotros"
+      class="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300"
+    >
+      Conocer más sobre nosotros
+      <svg
+        class="w-5 h-5 ml-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"></path>
+      </svg>
+    </a>
   </div>
 </section>
