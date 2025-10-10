@@ -24,7 +24,97 @@ import Footer from "../components/Footer.astro";
       </p>
     </div>
   </section>
+  <!-- Formulario de Contacto -->
+  <section class="relative py-20 bg-gray-900 text-gray-100 overflow-hidden">
+    <div class="absolute inset-0 opacity-5 bg-[url('/textures/pattern.svg')] bg-repeat"></div>
+    <div class="relative max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 animate-fade-in-up">
+        Solicita una Cotización
+      </h2>
 
+      <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/20 shadow-premium animate-slide-in-right max-w-2xl mx-auto">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="nombre" class="block text-sm font-medium mb-2">Nombre</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                placeholder="Tu nombre"
+                required
+              />
+            </div>
+            <div>
+              <label for="empresa" class="block text-sm font-medium mb-2">Empresa</label>
+              <input
+                type="text"
+                id="empresa"
+                name="empresa"
+                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                placeholder="Nombre de tu empresa"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium mb-2">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+              placeholder="tu@email.com"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="telefono" class="block text-sm font-medium mb-2">Teléfono</label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+              placeholder="+56 9 1234 5678"
+            />
+          </div>
+
+          <div>
+            <label for="servicio" class="block text-sm font-medium mb-2">Servicio de Interés</label>
+            <select
+              id="servicio"
+              name="servicio"
+              class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+            >
+              <option value="">Selecciona un servicio</option>
+              <option value="gestion-cambio">Gestión del Cambio</option>
+              <option value="optimizacion-procesos">Optimización de Procesos</option>
+              <option value="optimizacion-tiempos-recursos">Optimización de Tiempos y Recursos</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="mensaje" class="block text-sm font-medium mb-2">Mensaje</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="4"
+              class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
+              placeholder="Cuéntanos sobre tu proyecto..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="w-full bg-gradient-to-r from-orange-500 to-blue-500 hover:from-orange-600 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+            Enviar Mensaje
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
   <!-- Contact Information -->
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-6">
@@ -69,6 +159,8 @@ import Footer from "../components/Footer.astro";
       </div>
     </div>
   </section>
+
+
 
   <Footer />
 </MainLayout>
