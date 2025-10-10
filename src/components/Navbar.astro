@@ -1,40 +1,72 @@
 <!-- Main Navbar -->
-<nav id="main-navbar" class="fixed top-0 left-0 z-50 w-full transition-all duration-500 ease-out">
+<nav
+  id="main-navbar"
+  class="fixed top-0 left-0 z-50 w-full transition-all duration-500 ease-out"
+>
   <!-- Full-width background -->
-  <div id="navbar-container" class="bg-white/90 backdrop-blur-md border-b border-gray-200/50 shadow-md transition-all duration-300 ease-out">
+  <div
+    id="navbar-container"
+    class="bg-white/90 backdrop-blur-md border-b border-gray-200/50 shadow-md transition-all duration-300 ease-out"
+  >
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <!-- Logo -->
-      <a href="/" class="flex items-center space-x-3 group">
-        <img src="/img/logo.png" alt="Axionova Logo" class="w-10 h-10 object-cover group-hover:scale-110 transition-transform duration-300" />
-        <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent">AXIONOVA</span>
+      <a href="/" class="flex items-center group">
+        <img
+          src="/img/logo1.png"
+          alt="Axionova Logo"
+          class="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(59,130,246,0.6)]"
+        />
       </a>
 
       <!-- Desktop Navigation (sin dropdown) -->
       <div class="hidden lg:flex items-center space-x-10">
-        <a href="/" class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+        <a
+          href="/"
+          class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group"
+        >
           Inicio
-          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"
+          ></span>
         </a>
 
-        <a href="/servicios" class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+        <a
+          href="/servicios"
+          class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group"
+        >
           Servicios
-          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"
+          ></span>
         </a>
 
-        <a href="/nosotros" class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+        <a
+          href="/nosotros"
+          class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group"
+        >
           Nosotros
-          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"
+          ></span>
         </a>
 
-        <a href="/contacto" class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group">
+        <a
+          href="/contacto"
+          class="relative text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group"
+        >
           Contacto
-          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"
+          ></span>
         </a>
       </div>
 
       <!-- CTA -->
       <div class="hidden lg:flex items-center space-x-4">
-        <a href="/contacto" class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full px-6 py-2 shadow-lg hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 font-medium">
+        <a
+          href="/contacto"
+          class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full px-6 py-2 shadow-lg hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105 font-medium"
+        >
           Cotizar
         </a>
       </div>
@@ -48,12 +80,34 @@
         aria-expanded="false"
       >
         <!-- Icono hamburguesa -->
-        <svg id="menu-icon" class="w-6 h-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <svg
+          id="menu-icon"
+          class="w-6 h-6 block"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
         <!-- Icono cerrar -->
-        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        <svg
+          id="close-icon"
+          class="w-6 h-6 hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
     </div>
@@ -61,11 +115,31 @@
     <!-- Mobile Menu Panel -->
     <div id="mobile-menu" class="lg:hidden hidden border-t border-gray-200/60">
       <div class="px-6 py-4 space-y-2 bg-white/95 backdrop-blur-md text-center">
-        <a href="/" class="block px-4 py-3 rounded-xl text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition">Inicio</a>
-        <a href="/servicios" class="block px-4 py-3 rounded-xl text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition">Servicios</a>
-        <a href="/nosotros" class="block px-4 py-3 rounded-xl text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition">Nosotros</a>
-        <a href="/contacto" class="block px-4 py-3 rounded-xl text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition">Contacto</a>
-        <a href="/contacto" class="block mt-2 px-4 py-3 rounded-xl text-white bg-gradient-to-r from-orange-500 to-orange-600 text-center font-semibold hover:from-orange-600 hover:to-orange-700 transition">Cotizar</a>
+        <a
+          href="/"
+          class="block px-4 py-3 rounded-xl text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition"
+          >Inicio</a
+        >
+        <a
+          href="/servicios"
+          class="block px-4 py-3 rounded-xl text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition"
+          >Servicios</a
+        >
+        <a
+          href="/nosotros"
+          class="block px-4 py-3 rounded-xl text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition"
+          >Nosotros</a
+        >
+        <a
+          href="/contacto"
+          class="block px-4 py-3 rounded-xl text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition"
+          >Contacto</a
+        >
+        <a
+          href="/contacto"
+          class="block mt-2 px-4 py-3 rounded-xl text-white bg-gradient-to-r from-orange-500 to-orange-600 text-center font-semibold hover:from-orange-600 hover:to-orange-700 transition"
+          >Cotizar</a
+        >
       </div>
     </div>
   </div>
@@ -77,14 +151,18 @@
     if (window.__ax_nav_bound) return;
     window.__ax_nav_bound = true;
 
-    function $(sel) { return document.querySelector(sel); }
+    function $(sel) {
+      return document.querySelector(sel);
+    }
 
     function getEls() {
       return {
-        navbarContainer: /** @type {HTMLDivElement|null} */ ($('#navbar-container')),
-        mobileMenu:      /** @type {HTMLDivElement|null} */ ($('#mobile-menu')),
-        menuIcon:        /** @type {SVGSVGElement|null} */ ($('#menu-icon')),
-        closeIcon:       /** @type {SVGSVGElement|null} */ ($('#close-icon')),
+        navbarContainer: /** @type {HTMLDivElement|null} */ (
+          $("#navbar-container")
+        ),
+        mobileMenu: /** @type {HTMLDivElement|null} */ ($("#mobile-menu")),
+        menuIcon: /** @type {SVGSVGElement|null} */ ($("#menu-icon")),
+        closeIcon: /** @type {SVGSVGElement|null} */ ($("#close-icon")),
       };
     }
 
@@ -94,66 +172,69 @@
       if (!box) return;
       var scrolled = window.scrollY > 50;
 
-      box.classList.toggle('bg-white/60', scrolled);
-      box.classList.toggle('backdrop-blur-xl', scrolled);
-      box.classList.toggle('shadow-xl', scrolled);
-      box.classList.toggle('border-gray-300/20', scrolled);
+      box.classList.toggle("bg-white/60", scrolled);
+      box.classList.toggle("backdrop-blur-xl", scrolled);
+      box.classList.toggle("shadow-xl", scrolled);
+      box.classList.toggle("border-gray-300/20", scrolled);
 
-      box.classList.toggle('bg-white/90', !scrolled);
-      box.classList.toggle('backdrop-blur-md', !scrolled);
-      box.classList.toggle('shadow-md', !scrolled);
-      box.classList.toggle('border-gray-200/50', !scrolled);
+      box.classList.toggle("bg-white/90", !scrolled);
+      box.classList.toggle("backdrop-blur-md", !scrolled);
+      box.classList.toggle("shadow-md", !scrolled);
+      box.classList.toggle("border-gray-200/50", !scrolled);
     }
 
     function openMenu() {
       var els = getEls();
       if (!els.mobileMenu || !els.menuIcon || !els.closeIcon) return;
-      els.mobileMenu.classList.remove('hidden');
-      els.menuIcon.classList.add('hidden');
-      els.closeIcon.classList.remove('hidden');
-      document.addEventListener('keydown', onKeyDown);
+      els.mobileMenu.classList.remove("hidden");
+      els.menuIcon.classList.add("hidden");
+      els.closeIcon.classList.remove("hidden");
+      document.addEventListener("keydown", onKeyDown);
     }
 
     function closeMenu() {
       var els = getEls();
       if (!els.mobileMenu || !els.menuIcon || !els.closeIcon) return;
-      els.mobileMenu.classList.add('hidden');
-      els.menuIcon.classList.remove('hidden');
-      els.closeIcon.classList.add('hidden');
-      document.removeEventListener('keydown', onKeyDown);
+      els.mobileMenu.classList.add("hidden");
+      els.menuIcon.classList.remove("hidden");
+      els.closeIcon.classList.add("hidden");
+      document.removeEventListener("keydown", onKeyDown);
     }
 
     function onKeyDown(e) {
-      if (e.key === 'Escape') closeMenu();
+      if (e.key === "Escape") closeMenu();
     }
 
     // Delegación de eventos: funciona tras ClientRouter/ViewTransitions
-    document.addEventListener('click', function (e) {
+    document.addEventListener("click", function (e) {
       var t = /** @type {Element|null} */ (e.target);
       // Toggle del botón móvil
-      if (t && t.closest('#mobile-menu-btn')) {
+      if (t && t.closest("#mobile-menu-btn")) {
         e.stopPropagation();
         var els = getEls();
-        var isOpen = !!(els.mobileMenu && !els.mobileMenu.classList.contains('hidden'));
-        if (isOpen) closeMenu(); else openMenu();
+        var isOpen = !!(
+          els.mobileMenu && !els.mobileMenu.classList.contains("hidden")
+        );
+        if (isOpen) closeMenu();
+        else openMenu();
         return;
       }
       // Cerrar si clic fuera del panel cuando está abierto
-      if (t && !t.closest('#mobile-menu')) closeMenu();
+      if (t && !t.closest("#mobile-menu")) closeMenu();
     });
 
     // Cerrar al elegir cualquier enlace dentro del panel móvil
-    document.addEventListener('click', function (e) {
+    document.addEventListener("click", function (e) {
       var t = /** @type {Element|null} */ (e.target);
-      if (t && t.closest('#mobile-menu a')) closeMenu();
+      if (t && t.closest("#mobile-menu a")) closeMenu();
     });
 
     // Estado inicial de scroll
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
 
     // Re-sincroniza tras cada navegación SPA de Astro
-    window.addEventListener('astro:page-load', function () {
+    window.addEventListener("astro:page-load", function () {
       handleScroll();
       closeMenu(); // asegura cerrado al llegar
     });
