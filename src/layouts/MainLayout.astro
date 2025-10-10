@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { ViewTransitions } from "astro:transitions";
+import { ViewTransitions, ClientRouter } from "astro:transitions";
 const { 
   title = "Axionova - Futuro diseñado con confianza y precisión", 
   description = "Consultoría en minería especializada en optimización de procesos, mantenimiento predictivo y transformación digital para la excelencia operacional." 
@@ -22,6 +22,7 @@ const {
   </head>
   <body class="bg-gradient-to-r from-slate-100 to-orange-50 text-gray-100 antialiased">
     <ViewTransitions />
+    <ClientRouter />
     <slot />
   </body>
 </html>
