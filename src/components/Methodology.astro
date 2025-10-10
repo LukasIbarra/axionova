@@ -25,8 +25,8 @@ const whatWeDo = [
           <stop offset="100%" stop-color="#1e3a8a" />
         </linearGradient>
         <linearGradient id="upperOrangeGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#f97316" />
-          <stop offset="100%" stop-color="#ea580c" />
+          <stop offset="0%" stop-color="#1e40af" />
+          <stop offset="100%" stop-color="#1e3a8a" />
         </linearGradient>
       </defs>
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="url(#upperOrangeGrad)"></path>
@@ -39,7 +39,7 @@ const whatWeDo = [
   <div class="absolute inset-0 opacity-5">
     <div class="absolute inset-0" style={{
       backgroundImage: `radial-gradient(circle at 20% 80%, #3b82f6 0%, transparent 50%),
-                       radial-gradient(circle at 80% 20%, #f97316 0%, transparent 50%),
+                       radial-gradient(circle at 80% 20%, #3b82f6 0%, transparent 50%),
                        radial-gradient(circle at 40% 40%, #3b82f6 0%, transparent 50%)`
     }}></div>
   </div>
@@ -85,10 +85,10 @@ const whatWeDo = [
             <p class="text-gray-600 text-sm">Mejora en Eficiencia</p>
           </div>
           <div class="text-center">
-            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
               <i class="fas fa-project-diagram text-white text-2xl"></i>
             </div>
-            <h4 class="text-3xl font-bold text-orange-600 mb-2">500+</h4>
+            <h4 class="text-3xl font-bold text-blue-600 mb-2">500+</h4>
             <p class="text-gray-600 text-sm">Proyectos Completados</p>
           </div>
           <div class="text-center">
@@ -107,9 +107,9 @@ const whatWeDo = [
       <h3 class="text-4xl font-bold text-blue-600 mb-12 text-center">Lo Que Hacemos</h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
         {whatWeDo.map((item, i) => (
-          <div class="bg-gray-50/80 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/20 shadow-lg transform transition duration-500 hover:scale-105 hover:border-orange-500 animate-fade-up"
+          <div class="bg-gray-50/80 backdrop-blur-sm rounded-2xl p-8 border border-blue-500/20 shadow-lg transform transition duration-500 hover:scale-105 hover:border-blue-500 animate-fade-up"
                style={`animation-delay:${i * 200}ms`}>
-            <h4 class="text-5xl font-extrabold mb-4 text-orange-600/80">
+            <h4 class="text-5xl font-extrabold mb-4 text-blue-600/80">
               {item.id.toString().padStart(2, '0')}
             </h4>
             <h5 class="text-xl font-bold mb-3 text-gray-900">{item.title}</h5>
@@ -117,6 +117,11 @@ const whatWeDo = [
           </div>
         ))}
       </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="text-center mt-16">
+      <button id="openModal" class="btn-premium btn-premium-orange text-lg px-8 py-4">Contactar Ahora</button>
     </div>
   </div>
 
@@ -129,8 +134,8 @@ const whatWeDo = [
           <stop offset="100%" stop-color="#1e40af" />
         </linearGradient>
         <linearGradient id="lowerOrangeGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#ea580c" />
-          <stop offset="100%" stop-color="#f97316" />
+          <stop offset="0%" stop-color="#1e3a8a" />
+          <stop offset="100%" stop-color="#1e40af" />
         </linearGradient>
       </defs>
       <path d="M0,120V73.71c47.79-22.2,103.59-32.17,158-28,70.36,5.37,136.33,33.31,206.8,37.5C438.64,87.57,512.34,66.33,583,47.95c69.27-18,138.3-24.88,209.4-13.08,36.15,6,69.85,17.84,104.45,29.34C989.49,95,1113,134.29,1200,67.53V120Z" opacity=".25" fill="url(#lowerOrangeGrad)"></path>
@@ -139,6 +144,20 @@ const whatWeDo = [
     </svg>
   </div>
 </section>
+
+<!-- Modal -->
+<div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 relative">
+    <h3 class="text-2xl font-bold text-blue-600 mb-6 text-center">Contáctanos</h3>
+    <form id="contactForm" class="space-y-4">
+      <input type="text" placeholder="Nombre" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+      <input type="email" placeholder="Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+      <textarea placeholder="Mensaje" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 resize-none" required></textarea>
+      <button type="submit" class="w-full btn-premium btn-premium-orange">Enviar</button>
+    </form>
+    <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+  </div>
+</div>
 
 <style>
 /* Fade up animation */
@@ -149,4 +168,70 @@ const whatWeDo = [
 .animate-fade-up {
   animation: fade-up 0.8s ease forwards;
 }
+
+/* Modal styles */
+#contactModal {
+  transition: opacity 0.3s ease;
+}
+#contactModal.show {
+  display: flex;
+}
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const openModalBtn = document.getElementById('openModal');
+    const modal = document.getElementById('contactModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const form = document.getElementById('contactForm');
+
+    // Open modal
+    if (openModalBtn) {
+      openModalBtn.addEventListener('click', function() {
+        if (modal) {
+          modal.classList.remove('hidden');
+          modal.classList.add('show');
+        }
+      });
+    }
+
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('show');
+      }
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('show');
+      }
+    });
+
+    // Close on outside click
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('show');
+      }
+    });
+
+    // Form submission
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nameInput = form?.querySelector('input[type="text"]');
+      const emailInput = form?.querySelector('input[type="email"]');
+      const messageInput = form?.querySelector('textarea');
+
+      const name = nameInput ? nameInput.value : '';
+      const email = emailInput ? emailInput.value : '';
+      const message = messageInput ? messageInput.value : '';
+
+      if (name && email && message) {
+        alert(`Gracias, ${name}! Tu mensaje ha sido enviado. Te contactaremos pronto.`);
+        form?.reset();
+        modal.classList.add('hidden');
+        modal.classList.remove('show');
+      } else {
+        alert('Por favor, completa todos los campos.');
+      }
+    });
+  });
+</script>
