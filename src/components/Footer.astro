@@ -4,7 +4,7 @@
 
 <footer class="bg-black text-gray-300 py-12">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <!-- Logo y Descripción -->
       <div class="md:col-span-1">
         <div class="flex items-center space-x-2 mb-4">
@@ -162,6 +162,17 @@
           </a>
         </div>
       </div>
+
+      <!-- Logo Grande Derecha -->
+      <div class="flex items-center justify-center md:justify-end">
+        <div class="logo-grande-container">
+          <img
+            src="/logo.png"
+            alt="Axionova Logo Grande"
+            class="logo-grande"
+          />
+        </div>
+      </div>
     </div>
 
     <!-- Línea divisoria -->
@@ -185,7 +196,7 @@
   .logo-halo::before {
     content: "";
     position: absolute;
-    inset: -10px; /* tamaño del halo */
+    inset: -10px;
     background: radial-gradient(
       circle at center,
       rgba(59, 130, 246, 0.4) 0%,
@@ -203,5 +214,30 @@
   .logo-halo:hover::before {
     opacity: 1;
     filter: blur(16px);
+  }
+
+  /* Logo grande en el lado derecho */
+  .logo-grande-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .logo-grande {
+    height: 180px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.3));
+    transition: all 0.3s ease;
+  }
+
+  .logo-grande:hover {
+    filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.5));
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .logo-grande {
+      height: 120px;
+    }
   }
 </style>

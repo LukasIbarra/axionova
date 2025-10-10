@@ -13,6 +13,7 @@
     "astro": "^5.13.7",
     "embla-carousel": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
+    "sharp": "^0.34.4",
     "tailwindcss": "^4.1.13",
     "tiny-slider": "^2.9.4"
   },

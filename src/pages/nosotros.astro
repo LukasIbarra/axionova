@@ -8,10 +8,10 @@ import Footer from "../components/Footer.astro";
   <Navbar />
 
   <!-- Hero Section Mejorada -->
-  <section class="relative py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-orange-600 overflow-hidden">
+  <section class="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-orange-600 overflow-hidden flex items-center">
     <div class="absolute inset-0">
-      <img src="/us2.webp" alt="Operaciones mineras" class="w-full h-full object-cover opacity-20" />
-      <div class="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-orange-900/40"></div>
+      <img src="/us2.webp" alt="Operaciones mineras" class="w-full h-full object-cover opacity-30" />
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-900/60 to-orange-900/50"></div>
     </div>
     <div class="max-w-6xl mx-auto px-6 relative z-10 text-center text-white">
       <div class="inline-block mb-6">
@@ -62,7 +62,7 @@ import Footer from "../components/Footer.astro";
           </div>
         </div>
         <div class="relative group">
-          <img src="/conte4.jpg" alt="Equipo Axionova trabajando en operaciones mineras" 
+          <img src="/conte2.jpg" alt="Equipo Axionova trabajando en operaciones mineras"
                class="w-full h-96 object-cover rounded-2xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500" />
           <div class="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent rounded-2xl"></div>
           <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-orange-500 rounded-2xl rotate-12 opacity-90"></div>
@@ -168,36 +168,152 @@ import Footer from "../components/Footer.astro";
         <p class="text-xl text-gray-600">Soluciones integrales para la industria minera</p>
         <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-orange-500 mx-auto mt-6"></div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform hover:-translate-y-2 transition-all duration-300 group">
-          <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-colors duration-300">
-            <svg class="w-7 h-7 text-blue-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-            </svg>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1: Gestión del Cambio -->
+        <div class="service-card">
+          <img src="/us.webp" alt="Gestión del Cambio" class="service-img" />
+          <div class="textBox">
+            <p class="text head">Gestión del Cambio</p>
+            <span>Transformación Organizacional</span>
+            <p class="text price">80% Reducción de resistencias</p>
           </div>
-          <h4 class="text-xl font-bold text-gray-900 mb-4">Gestión del Cambio</h4>
-          <p class="text-gray-700 leading-relaxed">Aceleramos la adopción de nuevas prácticas en terreno, integrando herramientas Lean y modelos sociológicos para reducir resistencia y asegurar resultados sostenibles.</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform hover:-translate-y-2 transition-all duration-300 group">
-          <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-orange-500 transition-colors duration-300">
-            <svg class="w-7 h-7 text-orange-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            </svg>
+
+        <!-- Card 2: Optimización de Procesos -->
+        <div class="service-card">
+          <img src="/conte9.jpg" alt="Optimización de Procesos" class="service-img" />
+          <div class="textBox">
+            <p class="text head">Optimización de Procesos</p>
+            <span>Lean Six Sigma</span>
+            <p class="text price">30% Menos desperdicios</p>
           </div>
-          <h4 class="text-xl font-bold text-gray-900 mb-4">Optimización de Procesos</h4>
-          <p class="text-gray-700 leading-relaxed">Disminuimos tiempos de reparación, entre fallas y uso de insumos en mina y planta mediante metodologías probadas.</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform hover:-translate-y-2 transition-all duration-300 group">
-          <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-500 transition-colors duration-300">
-            <svg class="w-7 h-7 text-green-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
+
+        <!-- Card 3: Optimización de tiempos -->
+        <div class="service-card">
+          <img src="/conte7.webp" alt="Optimización de tiempos" class="service-img" />
+          <div class="textBox">
+            <p class="text head">Optimización de Tiempos</p>
+            <span>Planificación Avanzada</span>
+            <p class="text price">20% Menos tiempos</p>
           </div>
-          <h4 class="text-xl font-bold text-gray-900 mb-4">Optimización de Recursos</h4>
-          <p class="text-gray-700 leading-relaxed">Reducción de materias primas, aumento de productividad y eficiencia en procesos de mantenimiento y operaciones.</p>
+        </div>
+
+        <!-- Card 4: Transformación Digital -->
+        <div class="service-card">
+          <img src="/us2.webp" alt="Transformación Digital" class="service-img" />
+          <div class="textBox">
+            <p class="text head">Transformación Digital</p>
+            <span>Dashboards Interactivos</span>
+            <p class="text price">Datos en tiempo real</p>
+          </div>
+        </div>
+
+        <!-- Card 5: Operaciones de Planta -->
+        <div class="service-card">
+          <img src="/conte2.jpg" alt="Operaciones de Planta" class="service-img" />
+          <div class="textBox">
+            <p class="text head">Operaciones de Planta</p>
+            <span>Molienda y Flotación</span>
+            <p class="text price">Eficiencia Maximizada</p>
+          </div>
+        </div>
+
+        <!-- Card 6: Mantenimiento Mina -->
+        <div class="service-card">
+          <img src="/us3.webp" alt="Mantenimiento Mina" class="service-img" />
+          <div class="textBox">
+            <p class="text head">Mantenimiento Mina</p>
+            <span>Confiabilidad de Equipos</span>
+            <p class="text price">Disponibilidad Máxima</p>
+          </div>
         </div>
       </div>
+
+      <style>
+        .service-card {
+          width: 100%;
+          height: 285px;
+          background: #313131;
+          border-radius: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          transition: 0.2s ease-in-out;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .service-img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          position: absolute;
+          transition: 0.2s ease-in-out;
+          z-index: 1;
+        }
+
+        .textBox {
+          opacity: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          transition: 0.2s ease-in-out;
+          z-index: 2;
+          padding: 20px;
+        }
+
+        .textBox > .text {
+          font-weight: bold;
+        }
+
+        .textBox > .head {
+          font-size: 20px;
+          text-align: center;
+        }
+
+        .textBox > .price {
+          font-size: 17px;
+          text-align: center;
+        }
+
+        .textBox > span {
+          font-size: 12px;
+          color: lightgrey;
+          text-align: center;
+        }
+
+        .service-card:hover > .textBox {
+          opacity: 1;
+        }
+
+        .service-card:hover > .service-img {
+          filter: blur(7px);
+          animation: anim 3s infinite;
+        }
+
+        @keyframes anim {
+          0% {
+            transform: translateY(0);
+          }
+
+          50% {
+            transform: translateY(-20px);
+          }
+
+          100% {
+            transform: translateY(0);
+          }
+        }
+
+        .service-card:hover {
+          transform: scale(1.04) rotate(-1deg);
+        }
+      </style>
     </div>
   </section>
 
@@ -290,8 +406,66 @@ import Footer from "../components/Footer.astro";
     </div>
   </section>
 
-  <!-- El resto de las secciones las mantengo similares pero con mejoras de diseño -->
-  <!-- ... (continuar con las demás secciones aplicando el mismo estilo) ... -->
+  <!-- Experiencia de Nuestros Trabajadores -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Experiencia de Nuestros Trabajadores</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Más de 20 años de experiencia en terreno, aplicando metodologías avanzadas en operaciones mineras</p>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-orange-500 mx-auto mt-6"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+          <img src="/us.webp" alt="Trabajadores en operaciones mineras" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-600/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 text-white">
+            <h4 class="text-lg font-bold">Operaciones en Mina</h4>
+            <p class="text-sm">Experiencia directa en carguío y transporte</p>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+          <img src="/us1.webp" alt="Mantenimiento de equipos" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-gradient-to-t from-orange-600/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 text-white">
+            <h4 class="text-lg font-bold">Mantenimiento Avanzado</h4>
+            <p class="text-sm">Especialistas en CAEX y perforadoras</p>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+          <img src="/us2.webp" alt="Procesos de planta" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-gradient-to-t from-green-600/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 text-white">
+            <h4 class="text-lg font-bold">Procesos de Planta</h4>
+            <p class="text-sm">Optimización en molienda y flotación</p>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+          <img src="/us3.webp" alt="Análisis de datos" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-600/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 text-white">
+            <h4 class="text-lg font-bold">Análisis y Mejora</h4>
+            <p class="text-sm">Aplicación de Lean Six Sigma</p>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+          <img src="/us4.webp" alt="Capacitación en terreno" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-gradient-to-t from-orange-600/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 text-white">
+            <h4 class="text-lg font-bold">Capacitación Continua</h4>
+            <p class="text-sm">Desarrollo de competencias operativas</p>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+          <img src="/conte4.jpg" alt="Equipo multidisciplinario" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-gradient-to-t from-green-600/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 text-white">
+            <h4 class="text-lg font-bold">Equipo Experto</h4>
+            <p class="text-sm">Profesionales certificados en la región</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <Footer />
 </MainLayout>
